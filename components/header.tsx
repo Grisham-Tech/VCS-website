@@ -162,14 +162,14 @@ export default async function Header() {
         <Link
           href="/"
           aria-label="E-Summit '27: Dawn of the Defiant home"
-          className="inline-flex items-center h-20"
+          className="inline-flex items-center h-20 rounded-lg border border-white/10 bg-[#0d2035]/90 px-3 py-1 shadow-lg shadow-[#081522]/20"
         >
           <Image
             src="/esummit-logo.png"
             alt="IIT BHU's E-Summit '27 — Dawn of the Defiant"
             width={2020}
             height={610}
-            className="object-contain h-14 w-auto"
+            className="object-contain h-16 w-auto"
             priority
           />
         </Link>
