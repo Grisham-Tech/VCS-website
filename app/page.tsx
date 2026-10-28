@@ -81,19 +81,16 @@ export default async function Home() {
   }
 
   return (
-    <div className="w-full bg-transparent">
+    <div className="w-full bg-gradient-to-b from-[#F86531] via-[#C42F35] to-[#13324F]">
       {/* Hero Section */}
-      <section
-        className="min-h-[45vh] bg-cover bg-center bg-fixed relative pt-10"
-        style={{ backgroundImage: "url('/new-bg.jpeg')" }}
-      >
-        {/* Overlay — deep navy tint with a subtle orange-to-navy sweep at the bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#13324F]/50 via-[#0d2035]/55 to-[#0a0f14]/70"></div>
+      <section className="min-h-[45vh] relative pt-10">
+        {/* Subtle dark vignette at bottom so content flows into the sections below */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 space-y-8">
           {/* Main Hero Content */}
           <section className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 rounded-2xl border border-white/10 bg-[#0d1d2d]/75 p-6 shadow-xl backdrop-blur-md md:p-8">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
                   Empowering
@@ -105,7 +102,7 @@ export default async function Home() {
                   of Tomorrow
                 </span>
               </h1>
-              <p className="text-slate-300 text-lg leading-relaxed max-w-md">
+              <p className="text-white/85 text-lg leading-relaxed max-w-md drop-shadow-sm">
                 VC Scout develops future VC talent with practical training and
                 real deal-flow exposure for career-ready investing skills.
               </p>
@@ -114,7 +111,7 @@ export default async function Home() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8">
+              <Card className="bg-[#0d1d2d]/85 backdrop-blur-md p-6 md:p-8 border-white/10">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="text-lg md:text-xl font-bold">
                     Why VC Scout?
@@ -139,7 +136,7 @@ export default async function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8">
+              <Card className="bg-[#0d1d2d]/85 backdrop-blur-md p-6 md:p-8 border-white/10">
   <CardHeader className="p-0 mb-4">
     <CardTitle className="text-lg md:text-xl font-bold flex items-center gap-2">
       <span className="text-2xl">📅</span>
@@ -213,7 +210,7 @@ export default async function Home() {
 
       {/* Partners Section */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8 pb-40 md:pb-40">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-[#F86531] via-[#d9552a] to-[#C42F35] bg-clip-text text-transparent border-b-2 border-[#F86531]/40 pb-4 inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-white drop-shadow-md border-b-2 border-[#F86531]/60 pb-4 inline-block">
           Our Partners
         </h2>
 

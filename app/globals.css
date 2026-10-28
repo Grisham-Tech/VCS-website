@@ -6,7 +6,7 @@
 :root {
     --background: #0a0f14;
     --foreground: #e8edf2;
-    --overlay: rgba(19, 50, 79, 0.65);
+    --overlay: rgba(19, 50, 79, 0.35);
     --font-sans: "Inter", sans-serif;
     --font-mono: "Fira Code", monospace;
 
@@ -18,6 +18,7 @@
     /* Gradient shorthand (orange → crimson → navy) */
     --brand-gradient: linear-gradient(135deg, #F86531 0%, #C42F35 55%, #13324F 100%);
     --brand-gradient-r: linear-gradient(to right, #F86531, #C42F35);
+    --brand-gradient-b: linear-gradient(to bottom, #F86531 0%, #C42F35 45%, #13324F 100%);
 }
 
 /* Tailwind Theme Configuration */
@@ -63,19 +64,24 @@ main {
 }
 
 body {
-    background-image: url("/new-bg.jpeg");
-    background-size: cover;
-    background-position: center;
+    /* Brand gradient as the primary background */
+    background: linear-gradient(to bottom, #F86531 0%, #C42F35 40%, #13324F 100%);
     background-attachment: fixed;
-    background-repeat: no-repeat;
     position: relative;
+    min-height: 100vh;
 }
 
+/* Photo texture layer — sits above the gradient but doesn't obscure it */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: var(--overlay);
+    background-image: url("/new-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    mix-blend-mode: luminosity;
     z-index: -1;
 }
 
