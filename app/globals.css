@@ -64,25 +64,11 @@ main {
 }
 
 body {
-    /* Brand gradient as the primary background */
-    background: linear-gradient(to bottom, #F86531 0%, #C42F35 40%, #13324F 100%);
-    background-attachment: fixed;
-    position: relative;
+    background:
+        radial-gradient(ellipse 85% 48% at 8% 0%, rgba(248, 101, 49, 0.32), transparent 76%),
+        radial-gradient(ellipse 72% 42% at 92% 8%, rgba(196, 47, 53, 0.24), transparent 78%),
+        linear-gradient(to bottom, #13324F 0%, #0d2035 52%, #081522 100%);
     min-height: 100vh;
-}
-
-/* Photo texture layer — sits above the gradient but doesn't obscure it */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("/new-bg.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.08;
-    mix-blend-mode: luminosity;
-    z-index: -1;
 }
 
 /* Hide Scrollbars */

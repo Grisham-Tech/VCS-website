@@ -81,21 +81,18 @@ export default async function Home() {
   }
 
   return (
-    <div className="w-full bg-gradient-to-b from-[#F86531] via-[#C42F35] to-[#13324F]">
+    <div className="w-full">
       {/* Hero Section */}
       <section className="min-h-[45vh] relative pt-10">
-        {/* Subtle dark vignette at bottom so content flows into the sections below */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none" />
-
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 space-y-8">
           {/* Main Hero Content */}
           <section className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="space-y-6 rounded-2xl border border-white/10 bg-[#0d1d2d]/75 p-6 shadow-xl backdrop-blur-md md:p-8">
+            <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
                   Empowering
                 </span>
-                <span className="block text-5xl md:text-6xl font-extrabold gradient-text leading-tight">
+                <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
                   Venture Capitalists
                 </span>
                 <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
