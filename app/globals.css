@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables */
+/* E-Summit '27 — Brand CSS Variables */
 :root {
-    --background: #0a0a0a;
-    --foreground: #e5e5e5;
-    --accent: #e6e0db;
-    --overlay: rgba(0, 0, 0, 0.6);
+    --background: #0a0f14;
+    --foreground: #e8edf2;
+    --overlay: rgba(19, 50, 79, 0.65);
     --font-sans: "Inter", sans-serif;
     --font-mono: "Fira Code", monospace;
-    --orange-cus: #ffa500;
+
+    /* Brand palette */
+    --brand-orange: #F86531;
+    --brand-crimson: #C42F35;
+    --brand-navy: #13324F;
+
+    /* Gradient shorthand (orange → crimson → navy) */
+    --brand-gradient: linear-gradient(135deg, #F86531 0%, #C42F35 55%, #13324F 100%);
+    --brand-gradient-r: linear-gradient(to right, #F86531, #C42F35);
 }
-
-
 
 /* Tailwind Theme Configuration */
 @theme {
@@ -21,16 +26,9 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-sans);
     --font-mono: var(--font-mono);
-    --color-orange-cus: var(--orange-cus);
-}
-
-/* Light Mode (Optional) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --background: #ffffff;
-        --foreground: #171717;
-        --overlay: rgba(255, 255, 255, 0.2);
-    }
+    --color-brand-orange: var(--brand-orange);
+    --color-brand-crimson: var(--brand-crimson);
+    --color-brand-navy: var(--brand-navy);
 }
 
 /* Smooth Scrolling */
@@ -56,7 +54,7 @@ main {
     flex: 1;
 }
 
-/* Background Images */
+/* Background */
 .hero-background {
     background-image: url("/hero-background.jpg");
     background-size: cover;
@@ -65,7 +63,7 @@ main {
 }
 
 body {
-    background-image: url("/new-bg.jpeg"); /* Fixed path - removed ../public/ */
+    background-image: url("/new-bg.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -87,15 +85,14 @@ body::before {
 }
 
 html, body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-/* Hide scrollbar for horizontal scroll areas */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
@@ -107,120 +104,94 @@ html, body {
 
 /* Link Styles */
 a {
-    color: var(--accent);
+    color: var(--foreground);
     transition: color 0.2s ease;
 }
 
-
-/*
-a:hover {
-    color: #ffa500; }
-*/
-
-
-/* Legacy Styles (if needed) */
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* Tailwind Base Layer Customization */
+/* Tailwind Base Layer — E-Summit '27 token mapping */
 @layer base {
     :root {
-        --background: 0 0% 8%;
-        --foreground: 0 0% 98%;
-        
-        --card: 0 0% 12%;
-        --card-foreground: 0 0% 98%;
-        
-        --popover: 0 0% 10%;
-        --popover-foreground: 0 0% 98%;
-        
-        --primary: 25 95% 53%; /* Orange color in HSL */
-        --primary-foreground: 0 0% 10%;
-        
-        --secondary: 0 0% 20%;
-        --secondary-foreground: 0 0% 98%;
-        
-        --muted: 0 0% 25%;
-        --muted-foreground: 0 0% 60%;
-        
-        --accent: 25 95% 53%; /* Orange accent */
-        --accent-foreground: 0 0% 10%;
-        
-        --destructive: 0 84.2% 60.2%;
+        /* Deep navy base */
+        --background: 210 62% 18%;       /* #13324F equivalent in HSL */
+        --foreground: 210 20% 92%;
+
+        --card: 210 58% 14%;
+        --card-foreground: 210 20% 92%;
+
+        --popover: 210 60% 12%;
+        --popover-foreground: 210 20% 92%;
+
+        /* Primary = brand orange */
+        --primary: 19 93% 58%;            /* #F86531 in HSL */
+        --primary-foreground: 0 0% 100%;
+
+        /* Secondary = brand crimson */
+        --secondary: 358 62% 46%;         /* #C42F35 in HSL */
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 210 40% 22%;
+        --muted-foreground: 210 15% 60%;
+
+        /* Accent = brand orange */
+        --accent: 19 93% 58%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
-        
-        --border: 0 0% 20%;
-        --input: 0 0% 20%;
-        --ring: 25 95% 53%; /* Orange ring */
-        
+
+        --border: 210 40% 25%;
+        --input: 210 40% 20%;
+        --ring: 19 93% 58%;
+
         --radius: 1rem;
-        
-        --sidebar-background: 0 0% 10%;
-        --sidebar-foreground: 0 0% 98%;
-        --sidebar-primary: 25 95% 53%;
-        --sidebar-primary-foreground: 0 0% 10%;
-        --sidebar-accent: 0 0% 15%;
-        --sidebar-accent-foreground: 0 0% 98%;
-        --sidebar-border: 0 0% 20%;
-        --sidebar-ring: 25 95% 53%;
+
+        --sidebar-background: 210 60% 12%;
+        --sidebar-foreground: 210 20% 92%;
+        --sidebar-primary: 19 93% 58%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 210 40% 18%;
+        --sidebar-accent-foreground: 210 20% 92%;
+        --sidebar-border: 210 40% 25%;
+        --sidebar-ring: 19 93% 58%;
     }
 
     .dark {
-        --background: 0 0% 8%;
-        --foreground: 0 0% 98%;
-        
-        --card: 0 0% 12%;
-        --card-foreground: 0 0% 98%;
-        
-        --popover: 0 0% 10%;
-        --popover-foreground: 0 0% 98%;
-        
-        --primary: 25 95% 53%;
-        --primary-foreground: 0 0% 10%;
-        
-        --secondary: 0 0% 20%;
-        --secondary-foreground: 0 0% 98%;
-        
-        --muted: 0 0% 25%;
-        --muted-foreground: 0 0% 60%;
-        
-        --accent: 25 95% 53%;
-        --accent-foreground: 0 0% 10%;
-        
-        --destructive: 0 62.8% 30.6%;
+        --background: 210 62% 18%;
+        --foreground: 210 20% 92%;
+
+        --card: 210 58% 14%;
+        --card-foreground: 210 20% 92%;
+
+        --popover: 210 60% 12%;
+        --popover-foreground: 210 20% 92%;
+
+        --primary: 19 93% 58%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 358 62% 46%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 210 40% 22%;
+        --muted-foreground: 210 15% 60%;
+
+        --accent: 19 93% 58%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 62% 30%;
         --destructive-foreground: 0 0% 98%;
-        
-        --border: 0 0% 20%;
-        --input: 0 0% 20%;
-        --ring: 25 95% 53%;
-        
-        --sidebar-background: 0 0% 10%;
-        --sidebar-foreground: 0 0% 98%;
-        --sidebar-primary: 25 95% 53%;
-        --sidebar-primary-foreground: 0 0% 10%;
-        --sidebar-accent: 0 0% 15%;
-        --sidebar-accent-foreground: 0 0% 98%;
-        --sidebar-border: 0 0% 20%;
-        --sidebar-ring: 25 95% 53%;
+
+        --border: 210 40% 25%;
+        --input: 210 40% 20%;
+        --ring: 19 93% 58%;
+
+        --sidebar-background: 210 60% 12%;
+        --sidebar-foreground: 210 20% 92%;
+        --sidebar-primary: 19 93% 58%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 210 40% 18%;
+        --sidebar-accent-foreground: 210 20% 92%;
+        --sidebar-border: 210 40% 25%;
+        --sidebar-ring: 19 93% 58%;
     }
 }
 
@@ -231,7 +202,6 @@ a:hover {
 
     body {
         @apply text-foreground antialiased;
-        /* Removed duplicate background since it's already defined above */
         min-height: 100vh;
     }
 
@@ -242,19 +212,25 @@ a:hover {
 
 /* Utility Classes */
 @layer utilities {
+    /* Radial ambient glow using brand orange */
     .gradient-radial {
-        background: radial-gradient(circle at 20% 50%, hsl(25 95% 53% / 0.15), transparent 50%);
+        background: radial-gradient(circle at 20% 50%, rgba(248, 101, 49, 0.15), transparent 50%);
     }
 
-      .gradient-text {
-    background: linear-gradient(135deg, hsl(190, 95%, 55%) 0%, hsl(280, 75%, 60%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+    /* Hero gradient text: orange → crimson */
+    .gradient-text {
+        background: linear-gradient(135deg, #F86531 0%, #C42F35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
+    /* Full brand sweep: orange → crimson → navy */
     .text-gradient {
-        @apply bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent;
+        background: linear-gradient(135deg, #F86531 0%, #C42F35 55%, #13324F 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .animate-float {
@@ -269,7 +245,4 @@ a:hover {
             transform: translateY(-20px);
         }
     }
-
-
-    
 }

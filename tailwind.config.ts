@@ -52,6 +52,17 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // E-Summit '27 brand palette
+        brand: {
+          orange: "#F86531",
+          crimson: "#C42F35",
+          navy: "#13324F",
+        },
+      },
+      backgroundImage: {
+        "brand-gradient": "linear-gradient(135deg, #F86531 0%, #C42F35 55%, #13324F 100%)",
+        "brand-gradient-r": "linear-gradient(to right, #F86531, #C42F35)",
+        "brand-gradient-b": "linear-gradient(to bottom, #F86531, #C42F35, #13324F)",
       },
       borderRadius: {
         lg: "var(--radius)",
