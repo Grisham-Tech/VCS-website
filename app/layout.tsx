@@ -5,8 +5,9 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-    title: "ECELL IITBHU VCS",
-    description: "This site is IIT BHU ECELL VCS",
+    title: "E-Summit '27 | VC Scout",
+    description:
+        "VC Scout at IIT BHU's E-Summit '27: Dawn of the Defiant.",
 };
 
 const geistSans = Geist({

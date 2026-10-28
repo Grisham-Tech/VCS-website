@@ -154,15 +154,23 @@ export default async function Header() {
 
   return (
     <header className="w-full bg-gradient-to-b from-[#0d2035] via-[#13324F] to-[#0d2035] backdrop-blur-md text-white border-b border-[#F86531]/20 shadow-[0_2px_12px_rgba(19,50,79,0.6)] z-50">
+      {/* Brand accent bar — orange → crimson → navy */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-[#F86531] via-[#C42F35] to-[#13324F]" />
+
       <div className="max-w-6xl mx-auto flex justify-between items-center py-0 px-6">
-        {/* Logo */}
-        <Link href="/" className="inline-flex items-center h-20">
+        {/* E-Summit '27 logo */}
+        <Link
+          href="/"
+          aria-label="E-Summit '27: Dawn of the Defiant home"
+          className="inline-flex items-center h-20"
+        >
           <Image
-            src="/ecell-logo-noBG-WHITE.png"
-            alt="E-Cell IIT BHU"
-            width={160}
-            height={40}
-            className="object-contain h-full w-auto"
+            src="/esummit-logo.png"
+            alt="IIT BHU's E-Summit '27 — Dawn of the Defiant"
+            width={280}
+            height={56}
+            className="object-contain h-14 w-auto"
+            priority
           />
         </Link>
 
