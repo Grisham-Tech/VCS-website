@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowDown, ArrowLeft, ArrowUpRight, Loader2 } from "lucide-react";
+import { ArrowDown, ArrowLeft, Loader2 } from "lucide-react";
 import RegisterButton from "./components/register-button";
 // 💡 Import metadata and types
 import { modules, courseModules, ModuleDetail } from "@/data/course-data";
@@ -183,41 +183,34 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
       <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between min-h-[90vh] px-4 md:px-8 pt-6 sm:pt-12 py-12">
         {/* Course modules */}
         <div className="w-full lg:w-[52%]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {modules.map((item) => (
               <button
                 key={item.module}
                 type="button"
-                className="group relative flex min-h-[205px] flex-col overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-[#291e2b]/90 via-[#172337]/90 to-[#10243b]/90 p-5 text-left shadow-[0_14px_36px_rgba(8,21,34,0.2)] backdrop-blur-md transition-all duration-300 before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-[#F86531] before:via-white/40 before:to-transparent before:content-[''] hover:-translate-y-1 hover:border-orange-200/45 hover:shadow-[0_18px_42px_rgba(8,21,34,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200"
+                className="min-h-36 rounded-2xl border border-white/15 bg-[#0d2035]/65 p-5 text-left backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/50 hover:bg-[#0d2035]/80 hover:shadow-xl hover:shadow-black/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
                 onClick={() => handleModuleClick(item.module)}
               >
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/65">
-                    Module {String(item.module).padStart(2, "0")}
-                  </span>
-                  <ArrowUpRight className="h-4 w-4 text-white/35 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange-200" />
-                </div>
-                <div className="mb-4 text-lg font-semibold leading-snug text-white sm:text-xl">
+                <div className="mb-2 text-xs uppercase tracking-wider text-white/65">
                   {item.label}
                 </div>
-                <div className="mt-auto flex items-center gap-2 border-t border-white/10 pt-3 text-sm leading-relaxed text-white/65">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#F86531]" />
-                  <span>{item.topic}</span>
+                <div className="mb-2 text-2xl font-bold text-white">
+                  Module {item.module}
+                </div>
+                <div className="text-sm leading-relaxed text-white/75">
+                  {item.topic}
                 </div>
               </button>
             ))}
 
-            <div className="relative flex min-h-[205px] flex-col overflow-hidden rounded-2xl border border-orange-200/30 bg-gradient-to-br from-[#3a2529]/90 via-[#1b2434]/90 to-[#10243b]/90 p-5 shadow-[0_14px_36px_rgba(8,21,34,0.2)] backdrop-blur-md before:absolute before:inset-x-5 before:top-0 before:h-px before:bg-gradient-to-r before:from-[#F86531] before:via-orange-100/40 before:to-transparent before:content-['']">
-              <div className="mb-5 flex items-center justify-between">
-                <span className="rounded-full border border-orange-200/20 bg-orange-200/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-orange-100/75">
-                  Final Assessment
-                </span>
-                <span className="text-lg" aria-hidden="true">🏆</span>
+            <div className="min-h-36 rounded-2xl border border-orange-300/35 bg-gradient-to-br from-[#0d2035]/75 to-[#13324F]/75 p-5 backdrop-blur-md">
+              <div className="mb-2 text-xs uppercase tracking-wider text-white/65">
+                Final Assessment
               </div>
-              <div className="mb-4 text-xl font-semibold text-white">
-                Hackathon
+              <div className="mb-2 text-2xl font-bold text-white">
+                Hackathon 🏆
               </div>
-              <div className="mt-auto border-t border-white/10 pt-3 text-sm leading-relaxed text-white/70">
+              <div className="text-sm text-white/75">
                 Bring the course concepts together in a final challenge.
               </div>
             </div>
