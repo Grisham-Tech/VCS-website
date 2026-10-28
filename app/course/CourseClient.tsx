@@ -181,43 +181,44 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
     <div className="min-h-screen hero-background">
       {/* Hero Section */}
       <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between min-h-[90vh] px-4 md:px-8 pt-6 sm:pt-12 py-12">
-        {/* Left: Module Cards (Clickable) */}
-        <div className="hidden lg:block relative w-full max-w-3xl h-[70vh]">
-          {modules.map((item) => (
-            <div
-              key={item.id}
-              className="absolute bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 w-64 transition-all duration-300 hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-border-orange-500/10 cursor-pointer"
-              style={{ ...item.position, zIndex: item.zIndex }}
-              onClick={() => handleModuleClick(item.module)}
-            >
-              <div className="text-xs text-white/60 mb-2 uppercase tracking-wider">
-                {item.label}
-              </div>
-              <div className="text-white text-3xl font-bold mb-3">
-                Module {item.module}
-              </div>
-              <div className="text-sm text-white/70">{item.topic}</div>
-            </div>
-          ))}
+        {/* Course modules */}
+        <div className="w-full lg:w-[52%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {modules.map((item) => (
+              <button
+                key={item.module}
+                type="button"
+                className="min-h-36 rounded-2xl border border-white/15 bg-[#0d2035]/65 p-5 text-left backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/50 hover:bg-[#0d2035]/80 hover:shadow-xl hover:shadow-black/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+                onClick={() => handleModuleClick(item.module)}
+              >
+                <div className="mb-2 text-xs uppercase tracking-wider text-white/65">
+                  {item.label}
+                </div>
+                <div className="mb-2 text-2xl font-bold text-white">
+                  Module {item.module}
+                </div>
+                <div className="text-sm leading-relaxed text-white/75">
+                  {item.topic}
+                </div>
+              </button>
+            ))}
 
-          <div
-            className="absolute bg-black/40 backdrop-blur-md border-2 border-blue-400 rounded-2xl p-6 w-64 text-center transition-all duration-300 shadow-2xl shadow-blue-500/20"
-            style={{
-              bottom: "0%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 30,
-            }}
-          >
-            <div className="text-white text-3xl font-bold mb-2">
-              Hackathon 🏆
+            <div className="min-h-36 rounded-2xl border border-orange-300/35 bg-gradient-to-br from-[#0d2035]/75 to-[#13324F]/75 p-5 backdrop-blur-md">
+              <div className="mb-2 text-xs uppercase tracking-wider text-white/65">
+                Final Assessment
+              </div>
+              <div className="mb-2 text-2xl font-bold text-white">
+                Hackathon 🏆
+              </div>
+              <div className="text-sm text-white/75">
+                Bring the course concepts together in a final challenge.
+              </div>
             </div>
-            <div className="text-sm text-white/70">Final Assessment</div>
           </div>
         </div>
 
         {/* Right: Hero Text */}
-        <div className="relative z-10 w-full text-center lg:text-right max-w-3xl pr-12">
+        <div className="relative z-10 w-full text-center lg:w-[44%] lg:text-right max-w-3xl">
           <div className="space-y-6">
             <div className="text-sm text-cyan-200 font-medium tracking-wider">
               IIT BHU's winter Course for VC
@@ -263,23 +264,6 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
           </div>
         </div>
 
-        {/* Mobile Module Cards Carousel (Clickable) */}
-        <div className="lg:hidden flex justify-start gap-3 px-2 overflow-x-auto pb-4 w-full">
-          {modules.map((item) => (
-            <div
-              key={item.module}
-              className="bg-card border border-border rounded-lg p-3 min-w-[140px] flex-shrink-0 text-left cursor-pointer hover:border-orange-500 transition-colors"
-              onClick={() => handleModuleClick(item.module)}
-            >
-              <div className="text-orange-400 text-sm font-bold">
-                Module {item.module}
-              </div>
-              <div className="text-xs text-muted-foreground mt-1">
-                {item.label || item.topic}
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Course Outline Section */}

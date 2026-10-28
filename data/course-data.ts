@@ -13,21 +13,18 @@ export interface CourseModuleInfo {
 }
 
 export interface ModuleVisuals {
-    id: number;
     module: number;
     label: string;
     topic: string;
-    zIndex: number;
-    position: { top: string; left: string };
 }
 
-// Visual layout data for the Hero Section
+// Module preview content for the course hero
 export const modules: ModuleVisuals[] = [
-    { id: 1, module: 1, label: "Foundations of Venture Capital", topic: "Intro, Firm, Finances", zIndex: 10, position: { top: "0%", left: "15%" } },
-    { id: 2, module: 2, label: "Understanding Startups and Funding Pipeline", topic: "Ecosystem, Diligence", zIndex: 10, position: { top: "15%", left: "48%" } },
-    { id: 3, module: 3, label: "Deal Structuring and Portfolio Management", topic: "Investments, Term Sheets, Portfolio Management", zIndex: 10, position: { top: "40%", left: "55%" } },
-    { id: 4, module: 4, label: "Career and Global VC Perspective", topic: "Career, VC, Assignments", zIndex: 20, position: { top: "30%", left: "5%" } },
-    { id: 5, module: 5, label: "Advanced Tools, Pitches and Emerging Trends", topic: "Pitch Eval, Tools, Future of VC", zIndex: 10, position: { top: "55%", left: "20%" } },
+    { module: 1, label: "Foundations of Venture Capital", topic: "Intro, Firm, Finances" },
+    { module: 2, label: "Understanding Startups and Funding Pipeline", topic: "Ecosystem, Diligence" },
+    { module: 3, label: "Deal Structuring and Portfolio Management", topic: "Investments, Term Sheets, Portfolio Management" },
+    { module: 4, label: "Career and Global VC Perspective", topic: "Career, VC, Assignments" },
+    { module: 5, label: "Advanced Tools, Pitches and Emerging Trends", topic: "Pitch Eval, Tools, Future of VC" },
 ];
 
 // Module summary data
