@@ -95,13 +95,13 @@ export default async function Home() {
                 Dawn of the Defiant
               </p>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
                   Empowering
                 </span>
-                <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
                   Venture Capitalists
                 </span>
-                <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
                   of Tomorrow
                 </span>
               </h1>
@@ -114,7 +114,7 @@ export default async function Home() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-[#0d1d2d]/85 backdrop-blur-md p-6 md:p-8 border-white/10">
+              <Card className="rounded-2xl bg-[#0d1d2d]/75 backdrop-blur-md p-6 md:p-8 border-white/10 shadow-[0_12px_40px_rgba(8,21,34,0.18)]">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="text-lg md:text-xl font-bold">
                     Why VC Scout?
@@ -139,7 +139,7 @@ export default async function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-[#0d1d2d]/85 backdrop-blur-md p-6 md:p-8 border-white/10">
+              <Card className="rounded-2xl bg-[#0d1d2d]/75 backdrop-blur-md p-6 md:p-8 border-white/10 shadow-[0_12px_40px_rgba(8,21,34,0.18)]">
   <CardHeader className="p-0 mb-4">
     <CardTitle className="text-lg md:text-xl font-bold flex items-center gap-2">
       <span className="text-2xl">📅</span>
