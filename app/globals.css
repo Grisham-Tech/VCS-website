@@ -65,9 +65,9 @@ main {
 
 body {
     background:
-        radial-gradient(ellipse 85% 48% at 8% 0%, rgba(248, 101, 49, 0.32), transparent 76%),
-        radial-gradient(ellipse 72% 42% at 92% 8%, rgba(196, 47, 53, 0.24), transparent 78%),
+        radial-gradient(ellipse 90% 38% at 50% 0%, rgba(196, 47, 53, 0.16), transparent 100%),
         linear-gradient(to bottom, #13324F 0%, #0d2035 52%, #081522 100%);
+    background-attachment: fixed;
     min-height: 100vh;
 }
 

@@ -153,7 +153,7 @@ export default async function Header() {
   const session = await auth();
 
   return (
-    <header className="w-full bg-gradient-to-b from-[#0d2035] via-[#13324F] to-[#0d2035] backdrop-blur-md text-white border-b border-[#F86531]/20 shadow-[0_2px_12px_rgba(19,50,79,0.6)] z-50">
+    <header className="w-full bg-[#0d2035]/65 backdrop-blur-xl text-white border-b border-white/10 shadow-[0_2px_12px_rgba(19,50,79,0.35)] z-50">
       {/* Brand accent bar — orange → crimson → navy */}
       <div className="h-[3px] w-full bg-gradient-to-r from-[#F86531] via-[#C42F35] to-[#13324F]" />
 
@@ -167,8 +167,8 @@ export default async function Header() {
           <Image
             src="/esummit-logo.png"
             alt="IIT BHU's E-Summit '27 — Dawn of the Defiant"
-            width={280}
-            height={56}
+            width={2020}
+            height={610}
             className="object-contain h-14 w-auto"
             priority
           />
