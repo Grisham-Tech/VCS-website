@@ -64,7 +64,9 @@ main {
 }
 
 body {
-    background-image: url("/Rectangle 100753.png");
+    background-image:
+        linear-gradient(rgba(8, 21, 34, 0.17), rgba(8, 21, 34, 0.17)),
+        url("/Rectangle 100753.png");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;

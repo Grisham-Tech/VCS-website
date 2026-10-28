@@ -88,6 +88,12 @@ export default async function Home() {
           {/* Main Hero Content */}
           <section className="grid md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
+              <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
+                <span className="h-px w-8 bg-[#F86531]" />
+                E-Summit '27
+                <span className="text-white/50">·</span>
+                Dawn of the Defiant
+              </p>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="block text-5xl md:text-6xl font-extrabold text-white leading-tight">
                   Empowering
