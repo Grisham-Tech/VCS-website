@@ -19,7 +19,12 @@ export default function HomeClient({ status }: { status: Status }) {
         </Button>
       )}
 
-      <Button asChild variant="outline" size="lg">
+      <Button
+        asChild
+        variant="outline"
+        size="lg"
+        className="border-white/70 bg-[#13324F]/85 text-white hover:border-white hover:bg-[#13324F]"
+      >
         <Link href="/course">Explore Course</Link>
       </Button>
     </div>

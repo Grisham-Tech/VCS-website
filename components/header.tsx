@@ -153,7 +153,7 @@ export default async function Header() {
   const session = await auth();
 
   return (
-    <header className="w-full bg-[#0d2035]/65 backdrop-blur-xl text-white border-b border-white/10 shadow-[0_2px_12px_rgba(19,50,79,0.35)] z-50">
+    <header className="w-full bg-transparent backdrop-blur-sm text-white border-b border-white/10 z-50">
       {/* Brand accent bar — orange → crimson → navy */}
       <div className="h-[3px] w-full bg-gradient-to-r from-[#F86531] via-[#C42F35] to-[#13324F]" />
 
