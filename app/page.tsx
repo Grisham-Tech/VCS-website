@@ -50,7 +50,6 @@ const partners = [
 
 export default async function Home() {
 
-
  const session = await auth();
   let status: "no-session" | "unregistered" | "registered" = "no-session";
 
@@ -88,8 +87,8 @@ export default async function Home() {
         className="min-h-[45vh] bg-cover bg-center bg-fixed relative pt-10"
         style={{ backgroundImage: "url('/new-bg.jpeg')" }}
       >
-        {/* Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
+        {/* Overlay — deep navy tint with a subtle orange-to-navy sweep at the bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#13324F]/50 via-[#0d2035]/55 to-[#0a0f14]/70"></div>
 
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 space-y-8">
           {/* Main Hero Content */}
@@ -106,7 +105,7 @@ export default async function Home() {
                   of Tomorrow
                 </span>
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+              <p className="text-slate-300 text-lg leading-relaxed max-w-md">
                 VC Scout develops future VC talent with practical training and
                 real deal-flow exposure for career-ready investing skills.
               </p>
@@ -114,57 +113,8 @@ export default async function Home() {
                 <HomeClient status={status} />
             </div>
 
-            {/* <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-lg md:text-xl font-bold">
-                  Why VC Scout?
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent className="p-0">
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Learn from real VC investors</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Master deal flow & due diligence</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Build a strong VC-ready profile</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-lg md:text-xl font-bold">
-                  Why VC Scout?
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent className="p-0">
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Learn from real VC investors</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Master deal flow & due diligence</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold text-lg">•</span>
-                    <span>Build a strong VC-ready profile</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card> */}
             <div className="space-y-6">
-              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300">
+              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="text-lg md:text-xl font-bold">
                     Why VC Scout?
@@ -174,22 +124,22 @@ export default async function Home() {
                 <CardContent className="p-0">
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">•</span>
+                      <span className="text-[#F86531] font-bold text-lg">•</span>
                       <span>Learn from real VC investors</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">•</span>
-                      <span>Master deal flow & due diligence</span>
+                      <span className="text-[#F86531] font-bold text-lg">•</span>
+                      <span>Master deal flow &amp; due diligence</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">•</span>
+                      <span className="text-[#F86531] font-bold text-lg">•</span>
                       <span>Build a strong VC-ready profile</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300">
+              <Card className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8">
   <CardHeader className="p-0 mb-4">
     <CardTitle className="text-lg md:text-xl font-bold flex items-center gap-2">
       <span className="text-2xl">📅</span>
@@ -198,53 +148,53 @@ export default async function Home() {
   </CardHeader>
 
   <CardContent className="p-0">
-    <div className="overflow-x-auto"> {/* Added to handle potential overflow on small screens */}
+    <div className="overflow-x-auto">
       <table className="w-full text-sm text-left text-gray-300">
         <thead>
           <tr className="border-b border-zinc-700/50">
-            <th scope="col" className="py-2 pr-3 font-semibold text-blue-400 whitespace-nowrap">
+            <th scope="col" className="py-2 pr-3 font-semibold text-[#F86531] whitespace-nowrap">
               Date (Day)
             </th>
-            <th scope="col" className="py-2 pl-3 font-semibold text-blue-400">
+            <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
               Session Topic
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr className="border-b border-zinc-800 hover:bg-zinc-800/50 transition duration-150">
-            <td className="py-2 pr-3 text-blue-400 font-semibold whitespace-nowrap">
+          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
+            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
               29th Nov (Day 1)
             </td>
             <td className="py-2 pl-3">
               Introductory session
             </td>
           </tr>
-          <tr className="border-b border-zinc-800 hover:bg-zinc-800/50 transition duration-150">
-            <td className="py-2 pr-3 text-blue-400 font-semibold whitespace-nowrap">
+          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
+            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
               4th Dec (Day 6)
             </td>
             <td className="py-2 pl-3">
               Analysis + Due Diligence
             </td>
           </tr>
-          <tr className="border-b border-zinc-800 hover:bg-zinc-800/50 transition duration-150">
-            <td className="py-2 pr-3 text-blue-400 font-semibold whitespace-nowrap">
+          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
+            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
               9th Dec (Day 11)
             </td>
             <td className="py-2 pl-3">
               Term Sheets
             </td>
           </tr>
-          <tr className="border-b border-zinc-800 hover:bg-zinc-800/50 transition duration-150">
-            <td className="py-2 pr-3 text-blue-400 font-semibold whitespace-nowrap">
+          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
+            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
               11th Dec (Day 13)
             </td>
             <td className="py-2 pl-3">
               VC as a Career
             </td>
           </tr>
-          <tr className="hover:bg-zinc-800/50 transition duration-150">
-            <td className="py-2 pr-3 text-blue-400 font-semibold whitespace-nowrap">
+          <tr className="hover:bg-[#F86531]/5 transition duration-150">
+            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
               13th Dec (Day 15)
             </td>
             <td className="py-2 pl-3">
@@ -261,44 +211,9 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* <section className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8 pb-40 md:pb-40">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-200 via-blue-200 to-blue-100 bg-clip-text text-transparent border-b-2 border-blue-500/50 pb-4 inline-block">
-          Popular Courses
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-2">
-          {courses.map((c) => (
-            <Card
-              key={c.id}
-              className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-8 hover:border-blue-400/50 transition-all duration-300 group"
-            >
-              <CardHeader className="p-0 mb-3">
-                <CardTitle className="uppercase text-lg font-bold tracking-wider">
-                  {c.title}
-                </CardTitle>
-              </CardHeader>
-              <CardDescription className="mb-4 text-sm">
-                {c.short}
-              </CardDescription>
-              <CardFooter className="p-0 flex items-center justify-between text-sm text-slate-400">
-                <span>{c.duration}</span>
-                <Link
-                  href={`/courses#${c.id}`}
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors font-medium inline-flex items-center gap-1 group/link"
-                >
-                  Details
-                  <span className="group-hover/link:translate-x-1 transition-transform duration-300">
-                    →
-                  </span>
-                </Link>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section> */}
-
+      {/* Partners Section */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8 pb-40 md:pb-40">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-200 via-blue-200 to-blue-100 bg-clip-text text-transparent border-b-2 border-blue-500/50 pb-4 inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-[#F86531] via-[#d9552a] to-[#C42F35] bg-clip-text text-transparent border-b-2 border-[#F86531]/40 pb-4 inline-block">
           Our Partners
         </h2>
 
@@ -306,11 +221,11 @@ export default async function Home() {
           {partners.map((partner) => (
             <Card
               key={partner.id}
-              className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-7 hover:border-blue-400/50 transition-all duration-300 group hover:shadow-lg hover:shadow-blue-500/20"
+              className="bg-zinc-900/80 backdrop-blur-md p-6 md:p-7 transition-all duration-300 group hover:shadow-lg hover:shadow-[#F86531]/15"
             >
               <CardContent className="p-0 flex flex-col items-center text-center space-y-4">
-                {/* Logo Container with Glassmorphism Effect */}
-                <div className="w-full h-32 flex items-center justify-center bg-white rounded-lg border border-zinc-700/50 group-hover:border-blue-400/30 transition-all duration-300 backdrop-blur-sm">
+                {/* Logo Container */}
+                <div className="w-full h-32 flex items-center justify-center bg-white rounded-lg border border-zinc-700/50 group-hover:border-[#F86531]/30 transition-all duration-300 backdrop-blur-sm">
                   <Image
                     src={`/${partner.logo}`}
                     alt={`${partner.name} logo`}
@@ -322,8 +237,7 @@ export default async function Home() {
 
                 {/* Partner Name */}
                 <h3
-                  className="text-xl font-bold bg-gradient-to-r from-blue-300 via-cyan-400 to-yellow-300 bg-clip-text text-transparent group-hover:text-cyan-300 transition-all duration-300
-"
+                  className="text-xl font-bold bg-gradient-to-r from-[#F86531] via-[#e05a2c] to-[#C42F35] bg-clip-text text-transparent transition-all duration-300"
                 >
                   {partner.name}
                 </h3>
