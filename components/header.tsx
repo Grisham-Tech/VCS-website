@@ -153,7 +153,7 @@ export default async function Header() {
   const session = await auth();
 
   return (
-    <header className="w-full bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 backdrop-blur-md text-white border-b border-cyan-400/30 shadow-[0_2px_10px_rgba(0,0,30,0.4)] z-50">
+    <header className="w-full bg-gradient-to-b from-[#0d2035] via-[#13324F] to-[#0d2035] backdrop-blur-md text-white border-b border-[#F86531]/20 shadow-[0_2px_12px_rgba(19,50,79,0.6)] z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center py-0 px-6">
         {/* Logo */}
         <Link href="/" className="inline-flex items-center h-20">
@@ -170,7 +170,7 @@ export default async function Header() {
         <nav className="flex gap-6 text-sm font-medium items-center">
           <Link
             href="/course"
-            className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/50 hover:bg-slate-700/70 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 shadow-sm hover:shadow-cyan-500/20"
+            className="px-4 py-2 rounded-full bg-[#13324F]/60 border border-[#F86531]/30 hover:bg-[#F86531]/15 hover:border-[#F86531]/60 hover:text-[#F86531] transition-all duration-300 shadow-sm hover:shadow-[#F86531]/20"
           >
             Course
           </Link>
@@ -180,14 +180,14 @@ export default async function Header() {
             (session.user as any).role === "admin" && (
               <Link
                 href="/admin"
-                className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/50 hover:bg-slate-700/70 hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 shadow-sm hover:shadow-cyan-500/20"
+                className="px-4 py-2 rounded-full bg-[#13324F]/60 border border-[#F86531]/30 hover:bg-[#F86531]/15 hover:border-[#F86531]/60 hover:text-[#F86531] transition-all duration-300 shadow-sm hover:shadow-[#F86531]/20"
               >
                 Admin
               </Link>
             )}
 
           {session && session.user ? (
-            <ProfileDropdown 
+            <ProfileDropdown
               user={session.user}
               signOutAction={async () => {
                 "use server";
@@ -197,7 +197,7 @@ export default async function Header() {
           ) : (
             <Link
               href="/auth"
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-[0.97]"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-[#F86531] to-[#C42F35] text-white font-semibold hover:from-[#ff7340] hover:to-[#d93a40] transition-all duration-300 shadow-lg shadow-[#F86531]/30 hover:shadow-[#F86531]/50 hover:scale-[1.03] active:scale-[0.97]"
             >
               Register
             </Link>

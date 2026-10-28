@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { User, LogOut } from "lucide-react"; // If you don't have lucide-react, I'll provide alternative
+import { User, LogOut } from "lucide-react";
 
 interface ProfileDropdownProps {
   user: {
@@ -45,9 +45,9 @@ export default function ProfileDropdown({ user, signOutAction }: ProfileDropdown
       {/* Avatar Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+        className="flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#F86531]/50"
       >
-        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-cyan-400/30 flex items-center justify-center text-white text-sm font-semibold">
+        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#F86531] to-[#C42F35] border-2 border-[#F86531]/40 flex items-center justify-center text-white text-sm font-semibold">
           {user.image ? (
             <img
               src={user.image}
@@ -62,9 +62,9 @@ export default function ProfileDropdown({ user, signOutAction }: ProfileDropdown
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-slate-900/95 backdrop-blur-md border border-cyan-400/30 rounded-lg shadow-lg shadow-cyan-500/10 z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-[#0d2035]/95 backdrop-blur-md border border-[#F86531]/30 rounded-lg shadow-lg shadow-[#F86531]/10 z-50">
           {/* User Info */}
-          <div className="px-4 py-3 border-b border-cyan-400/20">
+          <div className="px-4 py-3 border-b border-[#F86531]/20">
             <p className="text-sm font-medium text-white leading-none mb-1">
               {user.name}
             </p>
@@ -78,7 +78,7 @@ export default function ProfileDropdown({ user, signOutAction }: ProfileDropdown
             <Link
               href="/course/register"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-slate-800/70 hover:text-cyan-300 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-[#F86531]/10 hover:text-[#F86531] transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,14 +97,14 @@ export default function ProfileDropdown({ user, signOutAction }: ProfileDropdown
               <span>Update Profile</span>
             </Link>
 
-            <div className="border-t border-cyan-400/20 my-1"></div>
+            <div className="border-t border-[#F86531]/20 my-1"></div>
 
             <button
               onClick={() => {
                 setIsOpen(false);
                 signOutAction();
               }}
-              className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:bg-slate-800/70 hover:text-red-300 transition-colors"
+              className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:bg-[#C42F35]/10 hover:text-red-300 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
