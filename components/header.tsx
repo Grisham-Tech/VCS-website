@@ -162,14 +162,14 @@ export default async function Header() {
         <Link
           href="/"
           aria-label="E-Summit '27: Dawn of the Defiant home"
-          className="inline-flex items-center h-20"
+          className="relative inline-flex items-center h-20 before:absolute before:-inset-x-5 before:inset-y-1 before:bg-[radial-gradient(ellipse_at_center,rgba(19,50,79,0.48)_0%,rgba(19,50,79,0.18)_48%,transparent_78%)] before:blur-md before:content-['']"
         >
           <Image
             src="/esummit-logo.png"
             alt="IIT BHU's E-Summit '27 — Dawn of the Defiant"
             width={2020}
             height={610}
-            className="object-contain h-14 w-auto"
+            className="relative z-10 object-contain h-16 w-auto drop-shadow-[0_1px_5px_rgba(8,21,34,0.55)]"
             priority
           />
         </Link>
