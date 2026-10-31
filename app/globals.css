@@ -35,6 +35,7 @@
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+    background-color: #13324f;
 }
 
 /* Layout Structure for Footer Positioning */
@@ -55,24 +56,22 @@ main {
     flex: 1;
 }
 
-/* Background */
-.hero-background {
-    background-image: url("/hero-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
+/* Keep the E-Summit artwork behind every page, including the main landing page. */
 body {
-    background-image:
-        linear-gradient(to bottom, rgba(8, 21, 34, 0.26), rgba(8, 21, 34, 0.14)),
-        radial-gradient(rgba(255, 255, 255, 0.045) 0.7px, transparent 0.9px),
-        url("/Rectangle 100753.png");
-    background-size: 100% 100%, 8px 8px, 100% 100%;
-    background-position: center, center, center;
-    background-repeat: no-repeat, repeat, no-repeat;
-    background-attachment: fixed, fixed, fixed;
+    height: auto;
     min-height: 100vh;
+    background-color: #c42f35;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(248, 101, 49, 0.82) 0%,
+            rgba(196, 47, 53, 0.9) 54%,
+            rgba(178, 39, 53, 0.92) 100%
+        ),
+        url("/course-background.webp");
+    background-size: 100% 100%, 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
 }
 
 /* Hide Scrollbars */
@@ -83,6 +82,79 @@ body {
 html, body {
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+*:focus-visible {
+    outline: 2px solid #fdba74;
+    outline-offset: 3px;
+}
+
+.lesson-source {
+    margin: 1.5rem 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(253, 191, 104, 0.32);
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.62);
+}
+
+.lesson-source summary {
+    position: relative;
+    cursor: pointer;
+    padding: 1rem 3rem 1rem 1.25rem;
+    color: #fed7aa;
+    font-weight: 700;
+    list-style: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lesson-source summary::-webkit-details-marker {
+    display: none;
+}
+
+.lesson-source summary::after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    content: "+";
+    color: #fdba74;
+    font-size: 1.35rem;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+.lesson-source[open] summary::after {
+    content: "−";
+}
+
+.lesson-source summary:hover,
+.lesson-source summary:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.lesson-source-content {
+    overflow-wrap: anywhere;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.25rem;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -215,7 +287,7 @@ a {
 
     /* Hero gradient text: orange → crimson */
     .gradient-text {
-        background: linear-gradient(135deg, #F86531 0%, #C42F35 100%);
+        background: linear-gradient(135deg, #FFD6A0 0%, #FFA6AC 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
