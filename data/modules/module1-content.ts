@@ -1,11 +1,13 @@
 import { ModuleDetail } from "@/data/course-data";
+import { module1Source } from "./module1-source";
+import { renderFullLesson } from "./render-full-lesson";
 
 export const module1Content: ModuleDetail[] = [
     {
         day: "Day 1",
         content: "Introduction to Venture Capitalism",
         detail: `
-            <p><a href="/MODULE-1.%28Updated%29docx.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the complete Module 1 curriculum</a></p>
+            ${renderFullLesson("Day 1", module1Source.day1)}
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">1. Venture Capitalism: Definition and Function</h2>
 
             Venture capitalism is a system of business financing in which wealthy individuals or investment groups provide capital to small or newly established companies that show potential for rapid growth and profitability, in exchange for equity ownership.
@@ -237,6 +239,7 @@ export const module1Content: ModuleDetail[] = [
                 <li><a href="https://visible.vc/blog/venture-partner/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Venture Partner Role Breakdown (Visible VC)</a></li>
                 <li><a href="https://avc.com/2010/08/what-is-a-venture-partner-and-does-it-matter-to-you/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">What is a Venture Partner? (AVC)</a></li>
             </ul>
+            ${renderFullLesson("Day 2", module1Source.day2)}
         `
     },
     {
@@ -248,7 +251,7 @@ export const module1Content: ModuleDetail[] = [
             <p>Required for everyone: how VC funds are raised and structured; management fees and carried interest; the fund lifecycle and J-curve.</p>
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Advanced (Optional)</h3>
             <p>Optional extension: waterfall mechanics, including hurdles and catch-up, and fund-return measures such as TVPI, DPI, RVPI, IRR and MOIC. These advanced topics are not prerequisites for the basic track.</p>
-            <p><a href="/MODULE-1.%28Updated%29docx.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the full Module 1 curriculum</a></p>
+            ${renderFullLesson("Day 3", module1Source.day3)}
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Management Fees in Venture Capital</h2>
 
             <p>Management fees are a fundamental revenue stream for venture capital (VC) firms, providing the financial runway to operate and support portfolio companies over the fund’s life.</p>

@@ -1,14 +1,13 @@
 import { ModuleDetail } from "@/data/course-data";
-
-const sourceCurriculum =
-    '<p><a href="/Module_5_4Page_VC_Module_v2.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the complete curriculum now presented as Module 4</a></p>';
+import { module4Source } from "./module4-source";
+import { renderFullLesson } from "./render-full-lesson";
 
 export const module4Content: ModuleDetail[] = [
     {
         day: "Day 12",
         content: "Pitch Evaluation, Portfolio Management and Risk",
         detail: `
-            ${sourceCurriculum}
+            ${renderFullLesson("Day 12", module4Source.day12)}
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Learning Outcomes</h2>
             <p>Evaluate a pitch deck using an investor framework and identify red flags. Explain diversification, follow-ons, pro-rata rights, reserves and exit routes, then build a basic VC portfolio plan.</p>
 
@@ -25,7 +24,7 @@ export const module4Content: ModuleDetail[] = [
         day: "Day 13",
         content: "VC in India and Abroad",
         detail: `
-            ${sourceCurriculum}
+            ${renderFullLesson("Day 13", module4Source.day13)}
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Learning Outcomes</h2>
             <p>Map the Indian VC landscape and emerging sectors; compare Indian and global VC culture; explain Category I AIFs, VC funds and angel funds; and apply current SEBI rules with appropriate caveats.</p>
 
@@ -40,7 +39,7 @@ export const module4Content: ModuleDetail[] = [
         day: "Day 14",
         content: "Future of VC and Careers",
         detail: `
-            ${sourceCurriculum}
+            ${renderFullLesson("Day 14", module4Source.day14)}
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Learning Outcomes</h2>
             <p>Evaluate AI, climate tech, micro-VCs and rolling funds; assess AI defensibility; understand the VC career ladder; and produce an investment memo as a portfolio piece.</p>
 
