@@ -58,6 +58,8 @@ main {
 
 /* Keep the E-Summit artwork behind every page, including the main landing page. */
 body {
+    position: relative;
+    isolation: isolate;
     height: auto;
     min-height: 100vh;
     background-color: #c42f35;
@@ -72,6 +74,34 @@ body {
     background-size: 100% 100%, 100% 100%;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
+}
+
+body::before {
+    position: fixed;
+    z-index: 0;
+    inset: -12%;
+    background:
+        radial-gradient(ellipse at 18% 20%, rgba(248, 101, 49, 0.16), transparent 38%),
+        radial-gradient(ellipse at 72% 48%, rgba(196, 47, 53, 0.18), transparent 44%),
+        radial-gradient(ellipse at 78% 92%, rgba(19, 50, 79, 0.16), transparent 36%);
+    content: "";
+    pointer-events: none;
+    animation: summit-ambient-drift 28s ease-in-out infinite alternate;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes summit-ambient-drift {
+    from {
+        transform: translate3d(-1.5%, -0.75%, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(1.5%, 0.75%, 0) scale(1.04);
+    }
 }
 
 /* Hide Scrollbars */
@@ -96,6 +126,10 @@ html, body {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    body::before {
+        animation: none;
     }
 }
 
