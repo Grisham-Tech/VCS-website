@@ -6,7 +6,7 @@ import { FaDiscord } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-[#632c2d]/90 to-[#291923]/95 backdrop-blur-sm border-t border-[#F86531]/20 py-12 px-4 md:px-8">
+    <footer className="relative bg-gradient-to-b from-[#632c2d]/90 to-[#1e293b]/95 backdrop-blur-sm border-t border-[#F86531]/20 py-12 px-4 md:px-8">
       {/* Subtle ambient glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#F86531]/10 via-[#C42F35]/10 to-[#13324F]/5 pointer-events-none"></div>
 
