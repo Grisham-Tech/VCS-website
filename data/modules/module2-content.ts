@@ -5,6 +5,7 @@ export const module2Content: ModuleDetail[] = [
         day: "Day 4",
         content: "Understanding the Startup Ecosystem & Market Analysis",
         detail: `
+            <p><a href="/Module%202.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the full Module 2 curriculum</a></p>
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Understanding the Startup Ecosystem</h2>
             
             <p>Have you ever wondered why some cities are buzzing with startups and caught up with the “hustle culture” while others lag behind? That’s because startups rarely grow in isolation. They thrive in an ecosystem, i.e, a living, breathing network of people, institutions, and resources that help new ideas turn into sustainable businesses.</p>
@@ -298,6 +299,7 @@ export const module2Content: ModuleDetail[] = [
         day: "Day 5",
         content: "Due Diligence Procedures & KPIs",
         detail: `
+            <p><a href="/Module%202.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the complete Module 2 curriculum</a></p>
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">1. Introduction to Due Diligence (DD)</h2>
             
             <p>Due Diligence (DD) is the thorough investigation performed by a VC firm to verify the facts and figures presented by a startup before making an investment. It is the core mechanism for risk mitigation, ensuring the investment thesis is strong.</p>

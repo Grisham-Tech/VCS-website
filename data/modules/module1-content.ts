@@ -5,8 +5,9 @@ export const module1Content: ModuleDetail[] = [
         day: "Day 1",
         content: "Introduction to Venture Capitalism",
         detail: `
+            <p><a href="/MODULE-1.%28Updated%29docx.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the complete Module 1 curriculum</a></p>
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">1. Venture Capitalism: Definition and Function</h2>
-            
+
             Venture capitalism is a system of business financing in which wealthy individuals or investment groups provide capital to small or newly established companies that show potential for rapid growth and profitability, in exchange for equity ownership.
 
             In simple words: Venture capitalism is when rich people or companies (called venture capitalists) give money to new businesses that have exciting ideas but need help to get started. They take a big risk because the new company might fail. But if it does well, they make a lot of profit later.
@@ -14,28 +15,28 @@ export const module1Content: ModuleDetail[] = [
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
 
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">2. How Does Venture Capital Work?</h2>
-            
+
             If you are a business owner looking for funds to grow your company, you must first submit a business plan to a VC firm or the investors in consideration. After going through the plan, due diligence will occur on behalf of the VC financing firm. This background check usually involves inspecting the company’s products, services, history, and management. If your company completes the diligence process, the firm shall offer you the capital in return for an equity stake. From this stage, the investing firms can be involved in the company’s management, technical, or decision-making process. The ultimate aim is to see the company grow.
 
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-            
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">3. The Role of Venture Capital Firms for Startups</h2>
-            
+
             The role of venture capital for startups is more than monetary support. They also act as a support system for startups during a time of crisis.
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><strong>Provide Funding:</strong> One of the key roles is to provide capital to entrepreneurs. The funds are often large enough to support the startup’s operations and growth strategies, allowing for in-depth R&D, boosting production, hiring more staff, creating better marketing strategies, and exploring new markets.</li>
                 <li><strong>Assist with Expert Guidance:</strong> With the funds, the venture capital firms provide expert guidance to help the startup grow. The firms have specialized teams of experts related to the startup industry who offer support and use their experience and knowledge to help the startup take the best possible actions and understand the market trends better.</li>
                 <li><strong>Help Startups Network in the Industry:</strong> Venture capital helps startups connect with relevant people in the industry, including potential partners and customers. It is the perfect opportunity for startups to leverage the chance and build valuable connections for future endeavors.</li>
                 <li><strong>Support the Startup’s Credibility:</strong> When startups secure venture capital, it often helps them gain market attention. The venture capital firm’s reputation affects the startup’s brand image, setting a stage for the startup to build a credible image for themselves and benefit from it.</li>
             </ul>
-            
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-            
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">4. How to Raise Venture Capital for a Startup?</h2>
-            
+
             Raising venture capital involves a few key steps as follows:
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Develop a solid business model, a clear growth strategy, and a compelling pitch deck.</li>
                 <li>Research and approach venture capital firms relevant to your industry.</li>
@@ -45,7 +46,7 @@ export const module1Content: ModuleDetail[] = [
             </ul>
 
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Features of Venture Capital Investments</h3>
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>The tenure of investments is usually long-term.</li>
                 <li>VC firms invest in projects that exhibit innovation and high growth potential.</li>
@@ -55,7 +56,7 @@ export const module1Content: ModuleDetail[] = [
             </ul>
 
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Venture Capitalists (VCs) and Their Features</h3>
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>High Risk, High Reward: These investments are high risk and high reward, thus attracting investors seeking high growth opportunities. VCs acknowledge inherent risks in investing in startups and early-stage companies. These investments have the potential for significant returns if the venture succeeds.</li>
                 <li>Active Involvement in Management: Venture capitalists actively involve themselves in the management of invested companies. This hands-on approach includes providing guidance, mentorship, and strategic advice. Active involvement aligns the interests of the venture capitalist with those of the entrepreneurs, creating a collaborative relationship.</li>
@@ -71,7 +72,7 @@ export const module1Content: ModuleDetail[] = [
             By providing access to capital and business expertise, venture capital funding is vital in fueling innovation, job creation, and economic growth.
 
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Disadvantages Of Venture Capital</h3>
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Loss of control: When venture capitalists invest in a startup, they often demand a certain level of control and influence in the decision-making process. This can result in founders having to share power and compromise on important business decisions.</li>
                 <li>Pressure for quick growth: Venture capitalists typically expect a high return on their investment within a relatively shorter timeframe. This can put immense pressure on startup founders to achieve rapid growth and profitability, sometimes at the expense of long-term sustainability and strategic planning.</li>
@@ -86,21 +87,21 @@ export const module1Content: ModuleDetail[] = [
             </ul>
         `,
     },
-    { 
-        day: "Day 2", 
-        content: "Working and Structure of a VC firm", 
+    {
+        day: "Day 2",
+        content: "Working and Structure of a VC firm",
         detail: `
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Organizational Structure of a VC Firm</h2>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">a. Limited Partners (LPs)</h3>
             <p>These are the investors who provide the bulk of the capital for the fund. LPs can include institutional investors (pension funds, insurance companies, endowments), high-net-worth individuals (HNWIs), family offices, corporations, and fund-of-funds. They share in the profits but have limited liability and no role in day-to-day decisions.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">b. General Partners (GPs)</h3>
             <p>The GPs are the core managers of the VC fund. They make investment decisions, manage portfolio companies, and are responsible for generating returns. GPs also raise capital from LPs and earn compensation through management fees (typically 2%) and carried interest (around 20% of profits).</p>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">c. Investment Committee (IC)</h3>
             <p>The IC is a senior group within the firm that evaluates and approves investment proposals. It ensures that deals align with the fund’s strategy, risk profile, and ethical standards. Final investment decisions usually require IC approval.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">d. Principals / Associates / Analysts</h3>
             <p>These are professionals involved in the execution side of investments:</p>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
@@ -108,14 +109,14 @@ export const module1Content: ModuleDetail[] = [
                 <li>Associates participate in due diligence, financial modeling, and portfolio monitoring.</li>
                 <li>Principals help negotiate deals and may lead smaller investments.</li>
             </ul>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">e. Operations & Support Teams</h3>
             <p>They handle the non-investment functions: finance, compliance, investor relations, HR, legal documentation, and marketing. Their work ensures the fund’s smooth functioning and regulatory compliance.</p>
-    
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-    
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Working Mechanism of a VC Firm (The Fund Lifecycle)</h2>
-            
+
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Fundraising from LPs</li>
                 <li>Deal Sourcing and Screening</li>
@@ -124,18 +125,18 @@ export const module1Content: ModuleDetail[] = [
                 <li>Portfolio Management and Support</li>
                 <li>Exit Strategy and Returns Distribution</li>
             </ul>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">1. Fundraising from Limited Partners (LPs)</h3>
             <p>VC firms begin by raising capital from Limited Partners (LPs), who are typically institutional investors (pension funds, insurance companies), high-net-worth individuals, family offices, or corporations. LPs commit a fixed amount to the VC fund. This phase often takes months or even years.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">2. Deal Sourcing and Screening</h3>
             <p>VC firms continuously source potential startups for investment through their networks, referrals, industry events, and applications. The screening process involves quickly evaluating the business idea, market potential, and team expertise.</p>
-            
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">VC Deal Sourcing (External)</h4>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://coresignal.com/blog/vc-deal-sourcing/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">VC Deal Sourcing Strategies (CoreSignal)</a></li>
             </ul>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">3. Due Diligence Process</h3>
             <p>For startups that pass the initial screen, VC firms perform in-depth due diligence. This includes:</p>
             <ul style="list-style-type: circle; margin-left: 3rem; padding-left: 0;">
@@ -145,46 +146,46 @@ export const module1Content: ModuleDetail[] = [
                 <li>Team assessment: Founders’ background, domain expertise.</li>
                 <li>Legal review: Compliance, contracts, potential liabilities.</li>
             </ul>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">4. Investment Decision & Term Sheet</h3>
             <p>After successful due diligence, the VC partners meet to decide on terms. A term sheet is drafted outlining key deal terms (Investment amount, Equity stake, Valuation, Board seats, Liquidation preferences).</p>
-            
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Investment Committee (IC)</h4>
             <p>The IC is typically composed of senior partners who review and approve investment proposals, assessing strategic fit, risk-return profiles, and competitive dynamics. Approval from the IC is mandatory before any capital commitment. </p>
-    
-    
+
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">5. Portfolio Management and Support</h3>
             <p>Post-investment, VC firms actively engage with the startup to maximize value creation, providing Strategic guidance, Mentorship, Hiring support, and Business development.</p>
             <p>Active portfolio management involves closely monitoring financial and operational KPIs, maintaining regular communication with founders, and providing strategic guidance. The Platform team often drives value-add initiatives and tailored services to accelerate growth and mitigate risks. </p>
-            
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">VC PLATFORM (Value-Add Role)</h4>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://www.getproven.com/blog/what-is-a-vc-platform" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">What is a VC Platform (GetProven)</a></li>
                 <li><a href="https://www.goingvc.com/post/everything-you-need-to-know-about-the-vc-platform-role" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Everything you need to know about the VC Platform Role (GoingVC)</a></li>
             </ul>
-    
-    
+
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">6. Exit Strategy and Returns Distribution</h3>
             <p>The goal is a successful exit (typically 7-10 years) via: IPO, Acquisition (M&A), or Secondary sales. Upon exit, returns are distributed back to the LPs and GPs. Exit is the liquidity event where the VC realizes a return on investment. </p>
-    
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-    
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">COLLABORATION AMONGST TEAMS</h2>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Team Roles and Responsibilities</h3>
-    
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Research Team (Sourcing)</h4>
             <p>The Research team is the front line of deal sourcing. They continuously scan markets, emerging technologies, and sectors to identify promising startups. Their key responsibilities include gathering market intelligence, performing competitive analysis, and delivering deep data insights, which help build a qualified deal pipeline.</p>
-            
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Investment Team (Diligence & Decision)</h4>
             <p>The Investment team includes roles from analysts up to partners and is responsible for leading the core investment activities. This team evaluates startups thoroughly—managing the due diligence process, negotiating terms, presenting cases to the Investment Committee (IC), and ultimately making investment decisions.</p>
-    
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Platform Team (Value Creation)</h4>
             <p>The Platform team enhances the value proposition of the VC by delivering operational and strategic support to portfolio companies beyond capital. Their services can include talent acquisition, marketing strategy, business development, and technical mentorship. The Platform team acts as a connector and resource hub.</p>
-    
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Operations (Ops) Team (Backend & Compliance)</h4>
             <p>The Ops team manages all backend functions of the VC firm—fund administration, legal compliance, LP communications, financial reporting, and accounting. Their role ensures the Investment and Platform teams operate without administrative hurdles, managing capital calls and regulatory adherence.</p>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">How These Teams Collaborate</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Research feeds market data and vetted deal flow to the Investment team.</li>
@@ -192,7 +193,7 @@ export const module1Content: ModuleDetail[] = [
                 <li>Platform amplifies portfolio success via tailored operational help, feeding insights back to Investment on evolving portfolio needs.</li>
                 <li>Operations underpins all with firm infrastructure and compliance.</li>
             </ul>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Best Practices for Effective Cross-Team Collaboration</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Clear goal alignment and role definitions: Avoid duplication and ensure accountability by defining each team’s role and how they interact.
@@ -208,74 +209,80 @@ export const module1Content: ModuleDetail[] = [
                 <li>Focus on culture and trust: Building mutual respect and understanding among teams creates a cooperative environment, critical for startups’ success and fund performance.
 .</li>
             </ul>
-            
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-    
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">SUMMARY & ADVANCED ROLES</h2>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Summary for a VC Analyst</h3>
             <p>As an analyst, you will engage primarily with Research and Investment teams—conducting market scans, preparing diligence materials, and assisting in deal analysis. Understanding how these teams integrate with Platform and Operations broadens your perspective on how portfolio value is created and how back-office functions sustain firm health. Strong collaboration skills and cross-team awareness will distinguish you and add meaningful impact.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Advanced VC Roles</h3>
-            
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">VC Scout (Referral Agent)</h4>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://tactyqal.com/blog/what-are-the-different-roles-job-titles-in-venture-capital/#VC_scout" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">VC Scout Roles and Job Titles (Tactyqal)</a></li>
                 <li><a href="https://innovationscapital.in/venture-capitalists-a-complete-guide-to-understanding-venture-capital-firms-and-investors/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Venture Capitalists: A Complete Guide (Innovations Capital)</a></li>
             </ul>
-    
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Operating Partner (Portfolio Support)</h4>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://growthequityinterviewguide.com/private-equity/private-equity-operations/operating-partner" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Operating Partner in Private Equity Operations</a></li>
                 <li><a href="https://superscout.co/guide/operating-partner" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Guide: The Operating Partner Role (SuperScout)</a></li>
             </ul>
-    
+
             <h4 style="font-size: 1.3rem; font-weight: 600; color: #fdbf68; margin-top: 1rem;">Venture Partner (Part-Time Deal Lead/Advisor)</h4>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://www.pitchdrive.com/glossary/venture-partner" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Glossary: Venture Partner (PitchDrive)</a></li>
                 <li><a href="https://visible.vc/blog/venture-partner/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Venture Partner Role Breakdown (Visible VC)</a></li>
                 <li><a href="https://avc.com/2010/08/what-is-a-venture-partner-and-does-it-matter-to-you/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">What is a Venture Partner? (AVC)</a></li>
             </ul>
-        ` 
+        `
     },
-    { 
-        day: "Day 3", 
-        content: "VC Finances: Carry & Management Fee", 
+    {
+        day: "Day 3",
+        content: "VC Fund Economics: Basic and Advanced Tracks",
         detail: `
+            <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Day 3 Learning Tracks</h2>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Basic (Mandatory)</h3>
+            <p>Required for everyone: how VC funds are raised and structured; management fees and carried interest; the fund lifecycle and J-curve.</p>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Advanced (Optional)</h3>
+            <p>Optional extension: waterfall mechanics, including hurdles and catch-up, and fund-return measures such as TVPI, DPI, RVPI, IRR and MOIC. These advanced topics are not prerequisites for the basic track.</p>
+            <p><a href="/MODULE-1.%28Updated%29docx.pdf" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Open the full Module 1 curriculum</a></p>
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Management Fees in Venture Capital</h2>
-            
+
             <p>Management fees are a fundamental revenue stream for venture capital (VC) firms, providing the financial runway to operate and support portfolio companies over the fund’s life.</p>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Purpose</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li>Cover operational expenses such as partner/staff salaries, office rent, travel, legal and accounting services, due diligence, and general administration.</li>
                 <li>Provide steady cash flow that sustains the VC firm regardless of investment outcomes.</li>
             </ul>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Typical Rates</h3>
             <p>Standard Fee Rate: Management fees commonly stand at 2% per annum of the fund’s committed capital during the initial investment period, usually the first 3 to 5 years of the fund’s life. Usually range from 2% to 2.5% annually on the fund's committed capital during the early investment years, often called the “investment period” (typically first 3–5 years). For example, a $100 million fund charging 2% collects $2 million annually in management fees during this phase.</p>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Step-Down Structure</h3>
             <p>After the initial investment period, management fees typically decrease (“step down”) to about 1% to 1.5%, usually calculated on the invested capital rather than committed capital, reflecting the reduced operational workload as the fund transitions to harvesting and managing investments. The step-down may occur gradually—for example, reducing by 0.25% every year after year 5—or be milestone-based (after all investments are made).</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Fund Lifecycle Impact</h3>
             <p>Across a typical 10-year fund lifecycle, management fees add up to about 10–20% of the total committed capital, representing a significant but necessary operational cost for the fund manager. Management fees cease when the fund terminates (usually after 10-12 years) or when all investments are liquidated and final distributions made.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Variations and Negotiations:</h3>
             <p>Seed-stage or smaller funds sometimes charge higher fees (up to 2.5–3%) due to fewer capital commitments but similar fixed operational costs. There may be fee waivers or discounts for large or founding LPs. Some funds use a blended or hybrid fee structure combining committed and invested capital bases.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Why Management Fees Matter</h3>
             <p>They ensure the VC firm has resources to support deal sourcing, portfolio management, and legal & financial compliance. They provide analysts, associates, partners, and platform teams with salaries and budget to effectively work with portfolio companies. While carry represents the upside earned, management fees are the predictable baseline income keeping the firm operational.</p>
-            
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-    
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Carried Interest</h2>
-    
+
             <p>Carried interest, commonly called “carry,” is the primary performance-based incentive compensation structure for General Partners (GPs) in venture capital (VC) funds. It represents a share of the profits generated by successful investments, paid after Limited Partners (LPs) have received their invested capital back.</p>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Definition and Purpose</h3>
             <p>Carry aligns the interests of GPs and LPs by rewarding the fund managers only when the investments generate positive returns above certain thresholds. It is typically expressed as a percentage of the fund’s profits.</p>
-    
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Typical Percentages and Earnings</h3>
 <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
     <li>The standard carried interest percentage in most VC funds is 20% of the profits, which means after returning capital to LPs, the GPs receive 20% of the upside.</li>
@@ -563,9 +570,9 @@ export const module1Content: ModuleDetail[] = [
         </tr>
     </tbody>
 </table>
-            
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Detailed Case Study: Sequoia Capital’s Multi-Startup Investment Strategy</h2>
-        
+
 <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Background</h3>
 <p>Sequoia Capital, founded in 1972, has built one of the most successful and diversified venture capital portfolios globally. Their approach balances financial metrics with deep qualitative factors such as founding team strength, technology moat, market potential, and network effects. By investing varying amounts tailored to startup stages and growth prospects, Sequoia has earned spectacular returns often unrelated to early revenue figures.</p>
 
@@ -634,11 +641,11 @@ export const module1Content: ModuleDetail[] = [
 
 <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Delivering Returns Beyond Early Revenue</h3>
 <p>Sequoia Capital's case clearly shows that early-stage companies may have little or no revenue yet offer tremendous upside through foundational strengths like innovative technology, market traction, or exceptional teams. By recognizing these factors and providing capital in multiple tranches while offering hands-on support, startups turns nascent opportunities into billion-dollar outcomes.</p>
-    
+
             <hr style="border-top: 1px solid #444; margin: 1.5rem 0;">
-    
+
             <h2 style="font-size: 2.25rem; font-weight: 800; color: #fdbf68; border-bottom: 2px solid #333; padding-bottom: 0.5rem; margin-top: 2.5rem;">Resources for Further Learning</h2>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">VC Funds and Lifecycle</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://corporatefinanceinstitute.com/resources/career-map/sell-side/capital-markets/venture-capital-fund/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Venture Capital Fund (CFI)</a></li>
@@ -651,7 +658,7 @@ export const module1Content: ModuleDetail[] = [
                 <li><a href="https://youtu.be/AqM2yAHmpaY?si=M7hR8bBcDcRMw_qw" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">YouTube: How Venture Capital Works</a></li>
                 <li><a href="https://youtu.be/kFtqLRfWXt0?si=eGQ1-Kcnr9q-0re6" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">YouTube: VC Funding Explained</a></li>
             </ul>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Management Fees and Carry</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://www.angellist.com/learn/management-fees" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Management Fees Explained (AngelList)</a></li>
@@ -660,7 +667,7 @@ export const module1Content: ModuleDetail[] = [
                 <li><a href="https://qubit.capital/blog/two-and-twenty-vc-fee-structure" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Two and Twenty VC Fee Structure (Qubit Capital)</a></li>
                 <li><a href="https://kruzeconsulting.com/blog/two-and-twenty-vc-fee-structure/" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Two and Twenty VC Fee Structure (Kruze Consulting)</a></li>
             </ul>
-            
+
             <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 2rem;">Investment Thesis & Strategy</h3>
             <ul style="list-style-type: disc; margin-left: 2rem; padding-left: 0;">
                 <li><a href="https://youtu.be/DsiDES1JOQc?si=Mk4R2vGzm5BmgcMY" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">YouTube: The Venture Capital Business Model Explained</a></li>
@@ -674,6 +681,6 @@ export const module1Content: ModuleDetail[] = [
                 <li><a href="https://growthequityinterviewguide.com/venture-capital/venture-capital-industry/venture-capital-investment-process" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Article: VC Investment Process Guide</a></li>
                 <li><a href="https://growthequityinterviewguide.com/venture-capital/venture-capital-industry/investment-thesis" target="_blank" rel="noopener noreferrer" style="color:#FFD700; text-decoration: underline;">Article: Investment Thesis Guide (Growth Equity)</a></li>
             </ul>
-        ` 
+        `
     },
 ];
