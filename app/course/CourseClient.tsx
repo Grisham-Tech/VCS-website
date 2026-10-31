@@ -12,7 +12,6 @@ import {
   Clock3,
   Lightbulb,
   Loader2,
-  Sparkles,
   Trophy,
 } from "lucide-react";
 import RegisterButton from "./components/register-button";
@@ -92,9 +91,12 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
       </Button>
 
       <header className="mb-12 rounded-3xl border border-white/10 bg-slate-950/45 px-6 py-10 text-center shadow-2xl shadow-black/20 backdrop-blur-md sm:px-10">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-orange-300/25 bg-orange-300/10 px-4 py-2 text-sm font-semibold tracking-wide text-orange-200">
-          <Sparkles className="h-4 w-4" />
-          Module {moduleInfo.module} <span aria-hidden="true">·</span> {moduleInfo.dayRange}
+        <div className="mb-3 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-orange-200">
+          <span className="h-px w-7 bg-orange-300/80" aria-hidden="true" />
+          <span>Module {String(moduleInfo.module).padStart(2, "0")}</span>
+          <span className="text-white/45" aria-hidden="true">/</span>
+          <span>{moduleInfo.dayRange}</span>
+          <span className="h-px w-7 bg-orange-300/80" aria-hidden="true" />
         </div>
         <h1 className="mb-4 text-4xl font-bold leading-tight text-white sm:text-5xl">
           {moduleInfo.title}
@@ -247,9 +249,9 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
         {/* Right: Hero Text */}
         <div className="relative z-10 w-full max-w-2xl text-center lg:text-left">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-200/25 bg-slate-950/35 px-4 py-2 text-xs font-semibold tracking-[0.16em] text-orange-100 backdrop-blur-sm sm:text-sm">
-              <Sparkles className="h-4 w-4 text-orange-300" />
-              E-SUMMIT &apos;27: DAWN OF THE DEFIANT
+            <div className="flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-orange-100 sm:text-sm lg:justify-start">
+              <span className="h-px w-8 shrink-0 bg-orange-300" aria-hidden="true" />
+              <span>E-Summit &apos;27 <span className="px-1 text-white/55">·</span> Dawn of the Defiant</span>
             </div>
 
             <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -352,19 +354,25 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
 
         <nav
           aria-label="Jump to a course module"
-          className="scrollbar-hide sticky top-2 z-30 mb-8 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/75 p-2 shadow-xl shadow-black/15 backdrop-blur-xl"
+          className="sticky top-2 z-30 mb-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-xl shadow-black/15 backdrop-blur-xl md:grid-cols-4"
         >
-          {courseModules.map((module) => (
+          {courseModules.map((module, index) => (
             <a
               key={module.module}
               href={`#module-${module.module}`}
-              className="inline-flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 sm:px-4"
+              className="flex min-w-0 items-center gap-2.5 bg-slate-950/80 px-3 py-3 text-left text-slate-100 transition hover:bg-slate-900/90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-300 sm:px-4"
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-400/15 text-xs font-bold text-orange-200">
-                {module.module}
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-orange-200/25 text-xs font-semibold text-orange-200">
+                {String(module.module).padStart(2, "0")}
               </span>
-              <span className="hidden 2xl:inline">{module.title}</span>
-              <span className="2xl:hidden">Module {module.module}</span>
+              <span className="min-w-0">
+                <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-slate-400 sm:text-[11px]">
+                  Module {module.module}
+                </span>
+                <span className="hidden truncate text-xs font-semibold leading-tight sm:block sm:text-sm">
+                  {["Fund & VC basics", "Startup diligence", "Deal structuring", "Portfolio & trends"][index]}
+                </span>
+              </span>
             </a>
           ))}
         </nav>
