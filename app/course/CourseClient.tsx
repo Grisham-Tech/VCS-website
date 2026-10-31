@@ -3,7 +3,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowDown, ArrowLeft, Loader2 } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowLeft,
+  BookOpen,
+  Lightbulb,
+  Loader2,
+  Trophy,
+} from "lucide-react";
 import RegisterButton from "./components/register-button";
 // 💡 Import metadata and types
 import { modules, courseModules, ModuleDetail } from "@/data/course-data";
@@ -182,13 +189,21 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
       {/* Hero Section */}
       <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between min-h-[90vh] px-4 md:px-8 pt-6 sm:pt-12 py-12">
         {/* Left: Module Cards (Clickable) */}
-        <div className="hidden lg:block relative w-full max-w-3xl h-[70vh]">
+        <div className="hidden lg:grid w-full max-w-3xl grid-cols-2 gap-4 self-center">
           {modules.map((item) => (
             <div
               key={item.id}
-              className="absolute bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 w-64 transition-all duration-300 hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-border-orange-500/10 cursor-pointer"
-              style={{ ...item.position, zIndex: item.zIndex }}
+              className="flex min-h-40 flex-col justify-center rounded-2xl border border-white/10 bg-black/40 p-6 backdrop-blur-md transition-all duration-300 hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer"
+              role="button"
+              tabIndex={0}
+              aria-label={`Open Module ${item.module}: ${item.label}`}
               onClick={() => handleModuleClick(item.module)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleModuleClick(item.module);
+                }
+              }}
             >
               <div className="text-xs text-white/60 mb-2 uppercase tracking-wider">
                 {item.label}
@@ -200,15 +215,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
             </div>
           ))}
 
-          <div
-            className="absolute bg-black/40 backdrop-blur-md border-2 border-blue-400 rounded-2xl p-6 w-64 text-center transition-all duration-300 shadow-2xl shadow-blue-500/20"
-            style={{
-              bottom: "0%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 30,
-            }}
-          >
+          <div className="col-span-2 mx-auto w-full max-w-xs rounded-2xl border-2 border-blue-400 bg-black/40 p-5 text-center shadow-2xl shadow-blue-500/20 backdrop-blur-md">
             <div className="text-white text-3xl font-bold mb-2">
               Hackathon 🏆
             </div>
@@ -220,7 +227,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
         <div className="relative z-10 w-full text-center lg:text-right max-w-3xl pr-12">
           <div className="space-y-6">
             <div className="text-sm text-cyan-200 font-medium tracking-wider">
-              IIT BHU's winter Course for VC
+              IIT BHU'S WINTER COURSE FOR VC
             </div>
 
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -236,6 +243,21 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
               of resources — engaging videos, blogs, assignments, and a final
               hackathon!
             </p>
+
+            <div className="flex flex-wrap justify-center gap-2.5 lg:justify-end">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-3.5 py-2 text-sm text-white/85 backdrop-blur-sm">
+                <BookOpen className="h-4 w-4 text-orange-300" />
+                Four focused modules
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-3.5 py-2 text-sm text-white/85 backdrop-blur-sm">
+                <Lightbulb className="h-4 w-4 text-orange-300" />
+                Practical VC casework
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-3.5 py-2 text-sm text-white/85 backdrop-blur-sm">
+                <Trophy className="h-4 w-4 text-orange-300" />
+                Final hackathon
+              </span>
+            </div>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-end pt-4">
               <RegisterButton status={status} />
@@ -269,7 +291,16 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
             <div
               key={item.module}
               className="bg-card border border-border rounded-lg p-3 min-w-[140px] flex-shrink-0 text-left cursor-pointer hover:border-orange-500 transition-colors"
+              role="button"
+              tabIndex={0}
+              aria-label={`Open Module ${item.module}: ${item.label}`}
               onClick={() => handleModuleClick(item.module)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleModuleClick(item.module);
+                }
+              }}
             >
               <div className="text-orange-400 text-sm font-bold">
                 Module {item.module}
@@ -297,24 +328,33 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
             How is the course structured?
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-3xl mx-auto">
-            The 6-module course takes you from the fundamentals of venture
-            capital to advanced startup funding, deal structuring, and portfolio
-            management
+            The 4-module course covers VC fundamentals, startup diligence, deal
+            structuring, investment memos, portfolio management, and emerging
+            trends.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2">
           {courseModules.map((module, index) => (
             <Card
               key={module.module}
-              className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-orange-500 transition-all duration-300 group cursor-pointer"
+              className="group relative flex h-full flex-col overflow-hidden border-border bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:bg-card/70 hover:shadow-xl hover:shadow-orange-950/20 cursor-pointer before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-[#F86531] before:via-[#C42F35] before:to-[#13324F]"
               style={{ animationDelay: `${index * 100}ms` }}
+              role="button"
+              tabIndex={0}
+              aria-label={`Open Module ${module.module}: ${module.title}`}
               onClick={(e) => {
                 // Don't trigger if clicking on a link
                 if ((e.target as HTMLElement).tagName === 'A') {
                   return;
                 }
                 handleModuleClick(module.module);
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleModuleClick(module.module);
+                }
               }}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -333,7 +373,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
                 {module.description}
               </p>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="mt-auto flex flex-wrap gap-2 pt-4">
                 {module.topics.map((topic) => (
                   <span
                     key={topic}
@@ -347,7 +387,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
           ))}
 
           {/* Hackathon card */}
-          <Card className="p-6 bg-gradient-to-br from-orange-500/10 to-orange-500/5 backdrop-blur-sm border-orange-500 hover:shadow-[0_0_40px_hsl(188_85%_43%/0.4)] transition-all duration-300 group sm:col-span-2 lg:col-span-1">
+          <Card className="group relative overflow-hidden border-orange-400/70 bg-gradient-to-br from-orange-500/15 via-[#461f2b]/80 to-[#13324F]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_hsl(188_85%_43%/0.25)] sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-2xl before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-[#F86531] before:via-[#C42F35] before:to-[#13324F]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-2xl">
                 🏆
