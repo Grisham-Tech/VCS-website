@@ -352,31 +352,6 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
           </p>
         </div>
 
-        <nav
-          aria-label="Jump to a course module"
-          className="sticky top-2 z-30 mb-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-xl shadow-black/15 backdrop-blur-xl md:grid-cols-4"
-        >
-          {courseModules.map((module, index) => (
-            <a
-              key={module.module}
-              href={`#module-${module.module}`}
-              className="flex min-w-0 items-center gap-2.5 bg-slate-950/80 px-3 py-3 text-left text-slate-100 transition hover:bg-slate-900/90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-300 sm:px-4"
-            >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-orange-200/25 text-xs font-semibold text-orange-200">
-                {String(module.module).padStart(2, "0")}
-              </span>
-              <span className="min-w-0">
-                <span className="block text-[10px] font-medium uppercase tracking-[0.12em] text-slate-400 sm:text-[11px]">
-                  Module {module.module}
-                </span>
-                <span className="hidden truncate text-xs font-semibold leading-tight sm:block sm:text-sm">
-                  {["Fund & VC basics", "Startup diligence", "Deal structuring", "Portfolio & trends"][index]}
-                </span>
-              </span>
-            </a>
-          ))}
-        </nav>
-
         <div className="grid gap-6 sm:grid-cols-2">
           {courseModules.map((module) => (
             <Card
