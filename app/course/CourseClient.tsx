@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Clock3,
   Lightbulb,
-  Loader2,
   Trophy,
 } from "lucide-react";
 import RegisterButton from "./components/register-button";
@@ -25,6 +24,38 @@ type Status = "no-session" | "unregistered" | "registered";
 interface CourseClientProps {
   status: Status;
 }
+
+const moduleContentLoaders: Record<number, () => Promise<ModuleDetail[]>> = {
+  1: async () => (await import("@/data/modules/module1-content")).module1Content,
+  2: async () => (await import("@/data/modules/module2-content")).module2Content,
+  3: async () => (await import("@/data/modules/module3-content")).module3Content,
+  4: async () => (await import("@/data/modules/module4-content")).module4Content,
+};
+
+const moduleContentCache = new Map<number, Promise<ModuleDetail[]>>();
+
+const loadModuleContent = (moduleNumber: number) => {
+  const cached = moduleContentCache.get(moduleNumber);
+  if (cached) return cached;
+
+  const loader = moduleContentLoaders[moduleNumber];
+  if (!loader) {
+    return Promise.reject(new Error(`Unknown module number: ${moduleNumber}`));
+  }
+
+  const content = loader().catch((error: unknown) => {
+    moduleContentCache.delete(moduleNumber);
+    throw error;
+  });
+  moduleContentCache.set(moduleNumber, content);
+  return content;
+};
+
+const prefetchModuleContent = (moduleNumber: number) => {
+  void loadModuleContent(moduleNumber).catch((error: unknown) => {
+    console.error(`Failed to preload content for Module ${moduleNumber}:`, error);
+  });
+};
 
 // --- Module Detail Page Component (Dynamically loads content) ---
 
@@ -42,21 +73,23 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
 
   useEffect(() => {
     setCurriculum(null);
-    if (moduleNumber) {
-      import(`@/data/modules/module${moduleNumber}-content`)
-        .then((module) => {
-          const contentKey =
-            `module${moduleNumber}Content` as keyof typeof module;
-          setCurriculum(module[contentKey] as ModuleDetail[]);
-        })
-        .catch((error) => {
-          console.error(
-            `Failed to load content for Module ${moduleNumber}:`,
-            error
-          );
-          setCurriculum([]);
-        });
-    }
+    let active = true;
+
+    loadModuleContent(moduleNumber)
+      .then((content) => {
+        if (active) setCurriculum(content);
+      })
+      .catch((error: unknown) => {
+        console.error(
+          `Failed to load content for Module ${moduleNumber}:`,
+          error
+        );
+        if (active) setCurriculum([]);
+      });
+
+    return () => {
+      active = false;
+    };
   }, [moduleNumber]);
 
   if (!moduleInfo) {
@@ -64,20 +97,6 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
       <div className="min-h-screen hero-background py-16 px-4 md:px-8 max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-red-500">Module Not Found</h2>
         <Button onClick={onBack} className="mt-8">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Course Structure
-        </Button>
-      </div>
-    );
-  }
-
-  if (!curriculum) {
-    return (
-      <div className="min-h-screen hero-background py-16 px-4 md:px-8 max-w-7xl mx-auto flex flex-col items-center justify-center">
-        <Loader2 className="w-10 h-10 text-orange-500 animate-spin mb-4" />
-        <p className="text-white text-lg">
-          Loading Module {moduleNumber} Content...
-        </p>
-        <Button onClick={onBack} variant="outline" className="mt-8">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Course Structure
         </Button>
       </div>
@@ -123,12 +142,26 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
       </section>
 
       {/* Displaying detailed daily content */}
-      <section className="space-y-12">
+      <section className="space-y-12" aria-busy={!curriculum}>
         <h2 className="text-3xl font-bold text-white text-center">
           Daily Deep Dive Curriculum
         </h2>
 
-        {curriculum.map((day: ModuleDetail, index) => (
+        {!curriculum ? (
+          <div className="space-y-6" role="status" aria-live="polite">
+            {[1, 2].map((item) => (
+              <Card
+                key={item}
+                className="animate-pulse rounded-3xl border border-white/10 bg-slate-950/50 p-6 sm:p-8"
+              >
+                <div className="mb-5 h-7 max-w-md rounded bg-white/10" />
+                <div className="h-4 max-w-3xl rounded bg-white/10" />
+                <div className="mt-3 h-4 max-w-2xl rounded bg-white/10" />
+              </Card>
+            ))}
+            <span className="sr-only">Loading Module {moduleNumber} lessons...</span>
+          </div>
+        ) : curriculum.map((day: ModuleDetail, index) => (
           <Card
             key={index}
             className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-black/15 backdrop-blur-md sm:p-8"
@@ -190,6 +223,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
     }
 
     // Only registered users can view modules
+    prefetchModuleContent(moduleNumber);
     setActiveModule(moduleNumber);
     window.scrollTo({
       top: 0,
@@ -222,6 +256,8 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
               type="button"
               key={item.id}
               className="group flex min-h-44 flex-col justify-center rounded-2xl border border-white/15 bg-slate-950/45 p-6 text-left shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/50 hover:bg-slate-950/65 hover:shadow-2xl hover:shadow-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              onMouseEnter={() => prefetchModuleContent(item.module)}
+              onFocus={() => prefetchModuleContent(item.module)}
               onClick={() => handleModuleClick(item.module)}
             >
               <div className="mb-3 flex items-center justify-between">
@@ -317,6 +353,7 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
               type="button"
               key={item.module}
               className="min-w-[220px] snap-start rounded-2xl border border-white/15 bg-slate-950/50 p-4 text-left shadow-lg shadow-black/10 backdrop-blur-md transition hover:border-orange-300/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              onFocus={() => prefetchModuleContent(item.module)}
               onClick={() => handleModuleClick(item.module)}
             >
               <div className="mb-2 flex items-center justify-between">
@@ -363,6 +400,8 @@ const CourseClient: React.FC<CourseClientProps> = ({ status }) => {
                 type="button"
                 className="flex h-full w-full flex-col p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-300 sm:p-7"
                 aria-label={`Open Module ${module.module}: ${module.title}`}
+                onMouseEnter={() => prefetchModuleContent(module.module)}
+                onFocus={() => prefetchModuleContent(module.module)}
                 onClick={() => handleModuleClick(module.module)}
               >
                 <div className="mb-6 flex w-full items-center justify-between gap-3">
