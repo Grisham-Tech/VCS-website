@@ -100,7 +100,7 @@ export default async function Home() {
       <section className="min-h-[45vh] relative pt-10">
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 space-y-8">
           {/* Main Hero Content */}
-          <section className="grid md:grid-cols-2 gap-10 items-center">
+          <section className="grid items-start gap-10 md:grid-cols-2">
             <div className="space-y-6">
               <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
                 <span className="h-px w-8 bg-[#F86531]" />
@@ -127,7 +127,7 @@ export default async function Home() {
                 <HomeClient status={status} />
             </div>
 
-            <div className="space-y-6">
+            <div>
               <Card className="rounded-2xl bg-[#0d1d2d]/75 backdrop-blur-md p-6 md:p-8 border-white/10 shadow-[0_12px_40px_rgba(8,21,34,0.18)]">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="text-lg md:text-xl font-bold">
@@ -152,47 +152,47 @@ export default async function Home() {
                   </ul>
                 </CardContent>
               </Card>
-
-              <Card className="rounded-2xl bg-[#0d1d2d]/75 backdrop-blur-md p-6 md:p-8 border-white/10 shadow-[0_12px_40px_rgba(8,21,34,0.18)]">
-  <CardHeader className="p-0 mb-4">
-    <CardTitle className="text-lg md:text-xl font-bold flex items-center gap-2">
-      <span className="text-2xl">📅</span>
-      Course Lesson Days
-    </CardTitle>
-  </CardHeader>
-
-  <CardContent className="p-0">
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm text-left text-gray-300">
-        <thead>
-          <tr className="border-b border-zinc-700/50">
-            <th scope="col" className="py-2 pr-3 font-semibold text-[#F86531] whitespace-nowrap">
-              Module / Day
-            </th>
-            <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
-              Lesson Topic
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {moduleLessons.map((session, index) => (
-            <tr
-              key={session.day}
-              className={`${index < moduleLessons.length - 1 ? "border-b border-zinc-800" : ""} hover:bg-[#F86531]/5 transition duration-150`}
-            >
-              <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-                Day {session.day}
-              </td>
-              <td className="py-2 pl-3">{session.topic}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </CardContent>
-</Card>
             </div>
           </section>
+
+          <Card className="rounded-2xl border-white/10 bg-[#0d1d2d]/75 p-6 shadow-[0_12px_40px_rgba(8,21,34,0.18)] backdrop-blur-md md:p-8">
+            <CardHeader className="mb-4 p-0">
+              <CardTitle className="flex items-center gap-2 text-lg font-bold md:text-xl">
+                <span className="text-2xl" aria-hidden="true">📅</span>
+                Course Lesson Days
+              </CardTitle>
+            </CardHeader>
+
+            <CardContent className="p-0">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm text-gray-300">
+                  <thead>
+                    <tr className="border-b border-zinc-700/50">
+                      <th scope="col" className="whitespace-nowrap py-2 pr-3 font-semibold text-[#F86531]">
+                        Day
+                      </th>
+                      <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
+                        Lesson Topic
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {moduleLessons.map((session, index) => (
+                      <tr
+                        key={session.day}
+                        className={`${index < moduleLessons.length - 1 ? "border-b border-zinc-800" : ""} transition duration-150 hover:bg-[#F86531]/5`}
+                      >
+                        <td className="whitespace-nowrap py-2 pr-3 font-semibold text-[#F86531]">
+                          Day {session.day}
+                        </td>
+                        <td className="py-2 pl-3">{session.topic}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
