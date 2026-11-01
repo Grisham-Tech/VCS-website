@@ -48,6 +48,20 @@ const partners = [
   },
 ];
 
+const moduleSessions = [
+  { module: 1, day: 1, topic: "Introduction to Venture Capitalism" },
+  { module: 1, day: 2, topic: "Working and Structure of a VC Firm" },
+  { module: 1, day: 3, topic: "VC Fund Economics: Basic and Advanced Tracks" },
+  { module: 2, day: 4, topic: "Understanding the Startup Ecosystem & Market Analysis" },
+  { module: 2, day: 5, topic: "Due Diligence Procedures & KPIs" },
+  { module: 3, day: 7, topic: "Deal Types and Valuation" },
+  { module: 3, day: 8, topic: "Term Sheets and Cap Table Lab" },
+  { module: 3, day: 9, topic: "Investment Memo Clinic and Assignment Briefing" },
+  { module: 4, day: 12, topic: "Pitch Evaluation, Portfolio Management and Risk" },
+  { module: 4, day: 13, topic: "VC in India and Abroad" },
+  { module: 4, day: 14, topic: "Future of VC and Careers" },
+];
+
 export default async function Home() {
 
  const session = await auth();
@@ -153,7 +167,7 @@ export default async function Home() {
         <thead>
           <tr className="border-b border-zinc-700/50">
             <th scope="col" className="py-2 pr-3 font-semibold text-[#F86531] whitespace-nowrap">
-              Date (Day)
+              Module / Day
             </th>
             <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
               Session Topic
@@ -161,46 +175,17 @@ export default async function Home() {
           </tr>
         </thead>
         <tbody>
-          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
-            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-              29th Nov (Day 1)
-            </td>
-            <td className="py-2 pl-3">
-              Introductory session
-            </td>
-          </tr>
-          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
-            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-              4th Dec (Day 6)
-            </td>
-            <td className="py-2 pl-3">
-              Analysis + Due Diligence
-            </td>
-          </tr>
-          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
-            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-              9th Dec (Day 11)
-            </td>
-            <td className="py-2 pl-3">
-              Term Sheets
-            </td>
-          </tr>
-          <tr className="border-b border-zinc-800 hover:bg-[#F86531]/5 transition duration-150">
-            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-              11th Dec (Day 13)
-            </td>
-            <td className="py-2 pl-3">
-              VC as a Career
-            </td>
-          </tr>
-          <tr className="hover:bg-[#F86531]/5 transition duration-150">
-            <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
-              13th Dec (Day 15)
-            </td>
-            <td className="py-2 pl-3">
-              Closing session (PS Release)
-            </td>
-          </tr>
+          {moduleSessions.map((session, index) => (
+            <tr
+              key={session.day}
+              className={`${index < moduleSessions.length - 1 ? "border-b border-zinc-800" : ""} hover:bg-[#F86531]/5 transition duration-150`}
+            >
+              <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
+                Module {session.module} · Day {session.day}
+              </td>
+              <td className="py-2 pl-3">{session.topic}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
