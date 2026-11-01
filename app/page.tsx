@@ -48,7 +48,7 @@ const partners = [
   },
 ];
 
-const moduleSessions = [
+const moduleLessons = [
   { module: 1, day: 1, topic: "Introduction to Venture Capitalism" },
   { module: 1, day: 2, topic: "Working and Structure of a VC Firm" },
   { module: 1, day: 3, topic: "VC Fund Economics: Basic and Advanced Tracks" },
@@ -157,7 +157,7 @@ export default async function Home() {
   <CardHeader className="p-0 mb-4">
     <CardTitle className="text-lg md:text-xl font-bold flex items-center gap-2">
       <span className="text-2xl">📅</span>
-      Live Sessions
+      Course Lesson Days
     </CardTitle>
   </CardHeader>
 
@@ -170,15 +170,15 @@ export default async function Home() {
               Module / Day
             </th>
             <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
-              Session Topic
+              Lesson Topic
             </th>
           </tr>
         </thead>
         <tbody>
-          {moduleSessions.map((session, index) => (
+          {moduleLessons.map((session, index) => (
             <tr
               key={session.day}
-              className={`${index < moduleSessions.length - 1 ? "border-b border-zinc-800" : ""} hover:bg-[#F86531]/5 transition duration-150`}
+              className={`${index < moduleLessons.length - 1 ? "border-b border-zinc-800" : ""} hover:bg-[#F86531]/5 transition duration-150`}
             >
               <td className="py-2 pr-3 text-[#F86531] font-semibold whitespace-nowrap">
                 Module {session.module} · Day {session.day}
