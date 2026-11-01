@@ -1,5 +1,4 @@
-import { auth } from "@/auth";
-import { headers } from "next/headers";
+import { auth, supabase } from "@/auth";
 import CourseClient from "./CourseClient";
 
 export default async function Page() {
@@ -8,30 +7,16 @@ export default async function Page() {
   let status: "no-session" | "unregistered" | "registered" = "no-session";
 
   if (session?.user?.email) {
-    try {
-      // Get dynamic host from headers
-      const headersList = await headers();
-      const host = headersList.get("host") || "localhost:3000";
-      const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-      const baseUrl = `${protocol}://${host}`;
+    const { data, error } = await supabase
+      .from("registrations")
+      .select("course_id")
+      .eq("user_email", session.user.email)
+      .maybeSingle();
 
-      const req = await fetch(
-        `${baseUrl}/api/user/${session.user.email}`,
-        { 
-          cache: "no-store",
-          signal: AbortSignal.timeout(10000) 
-        }
-      );
-
-      if (!req.ok) {
-        throw new Error(`HTTP error! status: ${req.status}`);
-      }
-
-      const res = await req.json();
-      status = res?.registered_course_id ? "registered" : "unregistered";
-    } catch (err) {
-      console.error("Error fetching user registration:", err);
-      // status remains "no-session" or you can set a different fallback
+    if (error) {
+      console.error("Error fetching user registration:", error);
+    } else {
+      status = data?.course_id ? "registered" : "unregistered";
     }
   }
 
