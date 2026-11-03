@@ -9,7 +9,6 @@ import {
   ArrowRight,
   BookOpen,
   ChevronRight,
-  Clock3,
   Lightbulb,
   Trophy,
 } from "lucide-react";
@@ -96,8 +95,11 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
     return (
       <div className="min-h-screen hero-background py-16 px-4 md:px-8 max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-red-500">Module Not Found</h2>
-        <Button onClick={onBack} className="mt-8">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Course Structure
+        <Button
+          onClick={onBack}
+          className="mt-8 border border-orange-100/30 bg-[#612E2A]/45 text-orange-50 shadow-sm shadow-black/10 backdrop-blur-md hover:border-orange-100/50 hover:bg-[#612E2A]/60 hover:text-white focus-visible:ring-orange-100"
+        >
+          <ArrowLeft className="h-4 w-4 text-orange-200" /> Back to Course Curriculum
         </Button>
       </div>
     );
@@ -105,8 +107,12 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
 
   return (
     <div className="min-h-screen hero-background py-16 px-4 md:px-8 max-w-7xl mx-auto">
-      <Button onClick={onBack} variant="outline" className="mb-8">
-        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Course Structure
+      <Button
+        onClick={onBack}
+        variant="outline"
+        className="mb-8 border-orange-100/30 bg-[#612E2A]/45 text-orange-50 shadow-sm shadow-black/10 backdrop-blur-md hover:border-orange-100/50 hover:bg-[#612E2A]/60 hover:text-white focus-visible:ring-orange-100"
+      >
+        <ArrowLeft className="h-4 w-4 text-orange-200" /> Back to Course Curriculum
       </Button>
 
       <header className="mb-12 rounded-3xl border border-white/10 bg-slate-950/45 px-6 py-10 text-center shadow-2xl shadow-black/20 backdrop-blur-md sm:px-10">
@@ -126,25 +132,35 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
       </header>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4 text-orange-400 text-center">
+        <h2
+          id="module-topics-heading"
+          className="mb-4 text-center text-2xl font-bold text-white"
+        >
           Key Topics
         </h2>
-        <div className="flex flex-wrap gap-3 justify-center">
+        <ul
+          aria-labelledby="module-topics-heading"
+          className="flex flex-wrap justify-center gap-2.5"
+        >
           {moduleInfo.topics.map((topic) => (
-            <span
+            <li
               key={topic}
-              className="text-base px-4 py-2 rounded-full bg-orange-500/20 text-orange-200 border border-orange-500/40"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/12 bg-slate-950/35 px-3.5 py-2 text-sm font-medium text-slate-200 shadow-sm"
             >
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-orange-300"
+                aria-hidden="true"
+              />
               {topic}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Displaying detailed daily content */}
-      <section className="space-y-12" aria-busy={!curriculum}>
-        <h2 className="text-3xl font-bold text-white text-center">
-          Daily Deep Dive Curriculum
+      <section className="space-y-8 sm:space-y-10" aria-busy={!curriculum}>
+        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          Course lessons
         </h2>
 
         {!curriculum ? (
@@ -164,29 +180,13 @@ const ModuleDetailPage: React.FC<ModuleDetailPageProps> = ({
         ) : curriculum.map((day: ModuleDetail, index) => (
           <Card
             key={index}
-            className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-black/15 backdrop-blur-md sm:p-8"
+            className="rounded-2xl border border-white/10 bg-slate-950/60 p-5 shadow-xl shadow-black/15 backdrop-blur-md sm:rounded-3xl sm:p-8"
           >
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-xl font-bold leading-snug text-orange-200 sm:text-2xl">
-                {day.day}: {day.content}
-              </h3>
-              <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-300">
-                <Clock3 className="h-3.5 w-3.5 text-orange-300" />
-                ~
-                {Math.max(
-                  1,
-                  Math.ceil(
-                    day.detail
-                      .replace(/<[^>]*>/g, " ")
-                      .trim()
-                      .split(/\s+/).length / 200
-                  )
-                )}{" "}
-                min read
-              </span>
-            </div>
+            <h3 className="mb-6 border-b border-white/10 pb-4 text-xl font-bold leading-snug tracking-tight text-orange-100 sm:mb-7 sm:text-2xl">
+              {day.day}: {day.content}
+            </h3>
             <div
-              className="prose prose-invert max-w-none text-slate-200 [&_a]:relative [&_a]:z-10 [&_a]:cursor-pointer [&_a]:text-orange-200 [&_a]:underline [&_a]:transition-colors [&_a]:hover:text-orange-100"
+              className="[&_a]:relative [&_a]:z-10 [&_a]:cursor-pointer [&_a]:text-orange-200 [&_a]:underline [&_a]:transition-colors [&_a]:hover:text-orange-100"
               dangerouslySetInnerHTML={{ __html: day.detail }}
             />
           </Card>

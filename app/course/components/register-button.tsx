@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type RegisterButtonProps = {
   status: "no-session" | "unregistered" | "registered";
@@ -7,8 +8,8 @@ type RegisterButtonProps = {
 export default function RegisterButton({ status }: RegisterButtonProps) {
     if (status === "no-session") {
         return (
-            <Button size="lg" disabled className="rounded-full px-8">
-                LOGIN REQUIRED
+            <Button asChild size="lg" className="rounded-full px-8">
+                <Link href="/auth">SIGN IN</Link>
             </Button>
         );
     }

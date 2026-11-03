@@ -48,23 +48,46 @@ const partners = [
   },
 ];
 
-const moduleLessons = [
-  { day: 1, topic: "Introduction to Venture Capitalism" },
-  { day: 2, topic: "Working and Structure of a VC Firm" },
-  { day: 3, topic: "VC Fund Economics: Basic and Advanced Tracks" },
-  { day: 4, topic: "Understanding the Startup Ecosystem & Market Analysis" },
-  { day: 5, topic: "Due Diligence Procedures & KPIs" },
-  { day: 7, topic: "Deal Types and Valuation" },
-  { day: 8, topic: "Term Sheets and Cap Table Lab" },
-  { day: 9, topic: "Investment Memo Clinic and Assignment Briefing" },
-  { day: 12, topic: "Pitch Evaluation, Portfolio Management and Risk" },
-  { day: 13, topic: "VC in India and Abroad" },
-  { day: 14, topic: "Future of VC and Careers" },
+const courseRoadmap = [
+  {
+    module: "01",
+    title: "Foundations & Fund Economics",
+    days: [
+      { day: 1, topic: "Introduction to Venture Capitalism" },
+      { day: 2, topic: "Working and Structure of a VC Firm" },
+      { day: 3, topic: "VC Fund Economics: Basic and Advanced Tracks" },
+    ],
+  },
+  {
+    module: "02",
+    title: "Startup Ecosystem & Due Diligence",
+    days: [
+      { day: 4, topic: "Understanding the Startup Ecosystem & Market Analysis" },
+      { day: 5, topic: "Due Diligence Procedures & KPIs" },
+    ],
+  },
+  {
+    module: "03",
+    title: "Deal Structuring & Investment Memo",
+    days: [
+      { day: 7, topic: "Deal Types and Valuation" },
+      { day: 8, topic: "Term Sheets and Cap Table Lab" },
+      { day: 9, topic: "Investment Memo Clinic and Assignment Briefing" },
+    ],
+  },
+  {
+    module: "04",
+    title: "Pitches, Portfolio & Emerging Trends",
+    days: [
+      { day: 12, topic: "Pitch Evaluation, Portfolio Management and Risk" },
+      { day: 13, topic: "VC in India and Abroad" },
+      { day: 14, topic: "Future of VC and Careers" },
+    ],
+  },
 ];
 
 export default async function Home() {
-
- const session = await auth();
+  const session = await auth();
   let status: "no-session" | "unregistered" | "registered" = "no-session";
 
   if (session?.user?.email) {
@@ -155,45 +178,68 @@ export default async function Home() {
             </div>
           </section>
 
-          <Card className="rounded-2xl border-white/10 bg-[#0d1d2d]/75 p-6 shadow-[0_12px_40px_rgba(8,21,34,0.18)] backdrop-blur-md md:p-8">
-            <CardHeader className="mb-4 p-0">
-              <CardTitle className="flex items-center gap-2 text-lg font-bold md:text-xl">
-                <span className="text-2xl" aria-hidden="true">📅</span>
-                Course Lesson Days
-              </CardTitle>
-            </CardHeader>
-
-            <CardContent className="p-0">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm text-gray-300">
-                  <thead>
-                    <tr className="border-b border-zinc-700/50">
-                      <th scope="col" className="whitespace-nowrap py-2 pr-3 font-semibold text-[#F86531]">
-                        Day
-                      </th>
-                      <th scope="col" className="py-2 pl-3 font-semibold text-[#F86531]">
-                        Lesson Topic
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {moduleLessons.map((session, index) => (
-                      <tr
-                        key={session.day}
-                        className={`${index < moduleLessons.length - 1 ? "border-b border-zinc-800" : ""} transition duration-150 hover:bg-[#F86531]/5`}
-                      >
-                        <td className="whitespace-nowrap py-2 pr-3 font-semibold text-[#F86531]">
-                          Day {session.day}
-                        </td>
-                        <td className="py-2 pl-3">{session.topic}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
         </div>
+      </section>
+
+      <section
+        aria-labelledby="course-roadmap-heading"
+        className="mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-16"
+      >
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-white/15 pb-5">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-200">
+              The learning path
+            </p>
+            <h2
+              id="course-roadmap-heading"
+              className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Built in four stages.
+            </h2>
+          </div>
+          <p className="text-sm text-white/70">11 lesson days <span className="px-1 text-orange-300">/</span> 4 modules</p>
+        </div>
+
+        <ol className="grid gap-5 md:grid-cols-2">
+          {courseRoadmap.map((module) => (
+            <li
+              key={module.module}
+              className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#241f2a]/80 p-5 shadow-[0_16px_40px_rgba(30,10,20,0.16)] backdrop-blur-sm sm:p-6"
+            >
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#F86531]/70 via-[#C42F35]/50 to-transparent" />
+              <div className="mb-4 flex items-start gap-4">
+                <span className="font-mono text-sm font-semibold tracking-widest text-[#ff865c]">
+                  {module.module}
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
+                    {module.title}
+                  </h3>
+                  <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/45">
+                    {module.days.length} lesson {module.days.length === 1 ? "day" : "days"}
+                  </p>
+                </div>
+              </div>
+
+              <ol className="ml-1 border-l border-white/10">
+                {module.days.map((lesson) => (
+                  <li
+                    key={lesson.day}
+                    className="relative flex gap-3 py-2.5 pl-4 first:pt-1 last:pb-0"
+                  >
+                    <span className="absolute -left-[3px] top-[1.05rem] h-1.5 w-1.5 rounded-full bg-[#F86531]" />
+                    <span className="w-10 shrink-0 text-xs font-semibold tabular-nums text-orange-200/80">
+                      D{lesson.day}
+                    </span>
+                    <span className="text-sm leading-relaxed text-white/80">
+                      {lesson.topic}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* Partners Section */}

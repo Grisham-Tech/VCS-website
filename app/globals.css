@@ -138,57 +138,64 @@ html, body {
     outline-offset: 3px;
 }
 
-.lesson-source {
-    margin: 1.5rem 0 0;
-    overflow: hidden;
-    border: 1px solid rgba(253, 191, 104, 0.32);
-    border-radius: 1rem;
-    background: rgba(15, 23, 42, 0.62);
-}
-
-.lesson-source summary {
-    position: relative;
-    cursor: pointer;
-    padding: 1rem 3rem 1rem 1.25rem;
-    color: #fed7aa;
-    font-weight: 700;
-    list-style: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.lesson-source summary::-webkit-details-marker {
-    display: none;
-}
-
-.lesson-source summary::after {
-    position: absolute;
-    top: 50%;
-    right: 1.25rem;
-    content: "+";
-    color: #fdba74;
-    font-size: 1.35rem;
-    line-height: 1;
-    transform: translateY(-50%);
-}
-
-.lesson-source[open] summary::after {
-    content: "−";
-}
-
-.lesson-source summary:hover,
-.lesson-source summary:focus-visible {
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
-}
-
-.lesson-source-content {
-    overflow-wrap: anywhere;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 1.25rem;
+.lesson-material {
+    max-width: 88ch;
+    margin-inline: 0;
     color: #e2e8f0;
-    font-size: 0.95rem;
-    line-height: 1.75;
-    white-space: pre-wrap;
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.lesson-material h4 {
+    margin: 1.6rem 0 0.55rem;
+    color: #ffcfad;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+}
+
+.lesson-material h4:first-child {
+    margin-top: 0;
+}
+
+.lesson-material p {
+    margin: 0 0 0.85rem;
+    color: #e6edf5;
+}
+
+.lesson-material strong {
+    color: #fff;
+    font-weight: 650;
+}
+
+.lesson-material ul {
+    margin: 0.4rem 0 1rem;
+    padding-left: 1.35rem;
+    list-style: disc;
+}
+
+.lesson-material li {
+    margin: 0.35rem 0;
+    padding-left: 0.35rem;
+    color: #e6edf5;
+}
+
+.lesson-material li::marker {
+    color: #fda779;
+}
+
+@media (max-width: 640px) {
+    .lesson-material {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .lesson-material h4 {
+        margin-top: 1.6rem;
+        font-size: 1.1rem;
+    }
 }
 
 ::-webkit-scrollbar-thumb {

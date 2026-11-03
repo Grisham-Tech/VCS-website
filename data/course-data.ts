@@ -37,10 +37,10 @@ export const courseModules: CourseModuleInfo[] = [
         module: 1,
         title: "Foundations and Fund Economics",
         description:
-            "Learn what venture capital is, how a VC firm operates, and how funds are raised and earn returns. Day 3 includes a mandatory basic track and optional advanced material.",
+            "Learn what venture capital is, how a VC firm operates, and how funds are raised and earn returns, including fund economics, management fees, and carried interest.",
         dayRange: "Days 1–3",
         lessonCount: 3,
-        topics: ["Introduction to VC", "VC Firm Roles", "Fundraising", "Management Fees", "Carry", "Basic (Mandatory)", "Advanced (Optional)"],
+        topics: ["VC Fundamentals", "Firm Structure", "Fundraising", "Management Fees", "Carried Interest", "LP/GP Economics"],
     },
     {
         module: 2,
@@ -49,16 +49,16 @@ export const courseModules: CourseModuleInfo[] = [
             "Explore the startup ecosystem, market sizing, and business models, then practice due diligence, startup evaluation, and building a deal pipeline.",
         dayRange: "Days 4–5",
         lessonCount: 2,
-        topics: ["Startup Ecosystem", "TAM/SAM/SOM", "Business Models", "Due Diligence", "Deal Pipeline", "Sourcing"],
+        topics: ["Startup Ecosystems", "Market Sizing", "Business Models", "Due Diligence", "Deal Sourcing", "Pipeline Management"],
     },
     {
         module: 3,
         title: "Deal Structuring and the Investment Memo",
         description:
-            "Across Days 7–9, compare financing instruments and valuation methods, read term sheets, model cap tables and exit waterfalls, and prepare an investment memo. Track A covers core topics; Track B adds optional advanced work.",
+            "Compare financing instruments and valuation methods, interpret term sheets, model cap tables and exit waterfalls, and prepare an evidence-based investment memo.",
         dayRange: "Days 7–9",
         lessonCount: 3,
-        topics: ["Deal Types", "Valuation", "Term Sheets", "Cap Tables", "Exit Waterfalls", "Investment Memo", "Track A: Core", "Track B: Optional Advanced"],
+        topics: ["Financing Instruments", "Startup Valuation", "Term Sheets", "Cap Table Modeling", "Exit Waterfalls", "Investment Memo"],
     },
     {
         module: 4,
@@ -67,7 +67,7 @@ export const courseModules: CourseModuleInfo[] = [
             "Across Days 12–14, evaluate pitches and portfolio risk, compare Indian and global VC, and explore emerging trends, fund structures and VC careers.",
         dayRange: "Days 12–14",
         lessonCount: 3,
-        topics: ["Pitch Evaluation", "Portfolio Management", "VC in India and Abroad", "AI", "Climate Tech", "VC Careers", "Investment Memo"],
+        topics: ["Pitch Evaluation", "Portfolio Strategy", "India & Global VC", "AI & Climate Tech", "Fund Structures", "VC Career Pathways"],
     },
 ];
 
